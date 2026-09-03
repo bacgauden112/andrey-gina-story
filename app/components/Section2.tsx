@@ -1,0 +1,68 @@
+// @ts-nocheck
+import React from 'react';
+
+export default function Section2() {
+  return (
+    <>
+<div data-node-id="element_countdown_yixxjgvlkhi" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="170" data-countdown="1" data-target="2026-12-31T02:00:00.000Z" data-sep=" : " data-show-d="1" data-show-h="1" data-show-m="1" data-show-s="1" data-suf-d="" data-suf-h="" data-suf-m="" data-suf-s="" style={{"position":"absolute","left":"175.274px","top":"1266.41px","width":"220.881px","height":"60px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"flex","alignItems":"center","justifyContent":"center","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"28px","fontWeight":"200","color":"rgb(146, 131, 98)","whiteSpace":"pre","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"170px"}}>
+          119 : 18 : 45 : 24
+        </div>
+<div data-node-id="element_text_12qo58imrug" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="170" style={{"position":"absolute","left":"177.241px","top":"1316.01px","width":"60.4256px","height":"20px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"170px"}}>
+          Ngày
+        </div>
+<div data-node-id="element_text_888xvosn3tc" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="170" style={{"position":"absolute","left":"236.026px","top":"1316.68px","width":"60.4256px","height":"20px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"170px"}}>
+          Giờ
+        </div>
+<div data-node-id="element_text_fxvcox4nc5g" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="170" style={{"position":"absolute","left":"289.966px","top":"1316.96px","width":"60.4256px","height":"20px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"170px"}}>
+          Phút
+        </div>
+<div data-node-id="element_text_93cap9lnjh0" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="170" style={{"position":"absolute","left":"340.176px","top":"1317.48px","width":"60.4256px","height":"20px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"170px"}}>
+          Giây
+        </div>
+<div data-node-id="element_shape_c067ncjqx71" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"416.257px","top":"1065.4px","width":"103.675px","height":"140px","zIndex":"0","boxShadow":"rgba(0, 0, 0, 0.15) 0px 10px 30px","--miu-node-rotate":"10.223401008290473deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-rotateInDownRight"}}>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100%" style={{"display":"block","overflow":"visible"}}>
+            <rect x="0" y="0" width="100" height="100" rx="0" ry="0" fill="#ffffff" stroke="none" strokeWidth="0"></rect>
+          </svg>
+        </div>
+<div data-node-id="element_image_stfrz6urwur" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"420.85px","top":"1069.49px","width":"94.675px","height":"131.402px","zIndex":"0","--miu-node-rotate":"10.223401008290473deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-rotateInDownRight"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/1779329621443-696231062_1436905638479998_8594977868034456452_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_xg7b3intc8w" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"423.794px","top":"1173.31px","width":"100.812px","height":"457.407px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeIn"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/bdajhsdgqwegqwb123.png" alt="" style={{"width":"100%","height":"100%","objectFit":"contain","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_rwuodwgu3c9" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"38.6437px","top":"1369.77px","width":"119.724px","height":"355.689px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeIn"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/khdkajsdn1l23123213.png" alt="" style={{"width":"100%","height":"100%","objectFit":"contain","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_scbqcf3uk94" style={{"position":"absolute","left":"255.04730902777777px","top":"1366.6809895833333px","width":"60.33246527777777px","height":"63.39735243055557px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/hdaksjdh12983213jk.png" alt="" style={{"width":"100%","height":"100%","objectFit":"contain","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_kn2hg0tvodq" data-anim-preset="flipInY" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-5.51454px","top":"1738.81px","width":"582.124px","height":"363.361px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-flipInY"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/1779329618665-699398090_1436903651813530_152410612304746230_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"linear-gradient(\n                  to bottom,\n                  rgba(0, 0, 0, 0.4) 0%,\n                  rgba(0, 0, 0, 0) 60%\n                )","opacity":"1","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
+          </div>
+        </div>
+<div data-node-id="element_text_w0c9vmlzk1j" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="150" style={{"position":"absolute","left":"163.023px","top":"731.265px","width":"248.334px","height":"23px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"18px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"150px"}}>
+          SAVE THE DATE
+        </div>
+<div data-node-id="element_text_kgsv2hn0idt" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"162.439px","top":"767.732px","width":"248.334px","height":"39px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"30px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
+          31.12.2026
+        </div>
+<div data-node-id="element_text_4lomnxcqk9p" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"189.539px","top":"1743.87px","width":"194.158px","height":"78px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"left","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"60px","fontWeight":"400","fontStyle":"normal","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
+          This Day
+        </div>
+<div data-node-id="element_text_dc3ag0qr2jp" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"160.867px","top":"1818.61px","width":"248.334px","height":"23px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"18px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
+          OUR HEARTS BECOME ONE
+        </div>
+
+    </>
+  );
+}

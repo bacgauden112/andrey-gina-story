@@ -1,0 +1,313 @@
+// @ts-nocheck
+'use client';
+import { useEffect } from 'react';
+import Section1 from './components/Section1';
+import Section2 from './components/Section2';
+import Section3 from './components/Section3';
+import Section4 from './components/Section4';
+import Section5 from './components/Section5';
+import Section6 from './components/Section6';
+import Section7 from './components/Section7';
+import Section8 from './components/Section8';
+import Section9 from './components/Section9';
+import Section10 from './components/Section10';
+import Section11 from './components/Section11';
+import Section12 from './components/Section12';
+import Section13 from './components/Section13';
+import Section14 from './components/Section14';
+import Section15 from './components/Section15';
+import Section16 from './components/Section16';
+import Section17 from './components/Section17';
+import Section18 from './components/Section18';
+import Section19 from './components/Section19';
+import Section20 from './components/Section20';
+import Section21 from './components/Section21';
+import Section22 from './components/Section22';
+import Section23 from './components/Section23';
+import Section24 from './components/Section24';
+import Section25 from './components/Section25';
+import Section26 from './components/Section26';
+import Section27 from './components/Section27';
+import Section28 from './components/Section28';
+import Section29 from './components/Section29';
+import Section30 from './components/Section30';
+import Section31 from './components/Section31';
+import Section32 from './components/Section32';
+import Section33 from './components/Section33';
+import Section34 from './components/Section34';
+import Section35 from './components/Section35';
+import Section36 from './components/Section36';
+import Section37 from './components/Section37';
+import Section38 from './components/Section38';
+import Section39 from './components/Section39';
+import Section40 from './components/Section40';
+import Section41 from './components/Section41';
+import Section42 from './components/Section42';
+import Section43 from './components/Section43';
+import Section44 from './components/Section44';
+import Section45 from './components/Section45';
+import Section46 from './components/Section46';
+import Section47 from './components/Section47';
+import Section48 from './components/Section48';
+import Section49 from './components/Section49';
+import Section50 from './components/Section50';
+import Section51 from './components/Section51';
+import Section52 from './components/Section52';
+import Section53 from './components/Section53';
+import Section54 from './components/Section54';
+import Section55 from './components/Section55';
+import Section56 from './components/Section56';
+import Section57 from './components/Section57';
+import Section58 from './components/Section58';
+import Section59 from './components/Section59';
+import Section60 from './components/Section60';
+import Section61 from './components/Section61';
+import Section62 from './components/Section62';
+import Section63 from './components/Section63';
+import Section64 from './components/Section64';
+import Section65 from './components/Section65';
+import Section66 from './components/Section66';
+import Section67 from './components/Section67';
+import Section68 from './components/Section68';
+import Section69 from './components/Section69';
+import Section70 from './components/Section70';
+import Section71 from './components/Section71';
+import Section72 from './components/Section72';
+import Section73 from './components/Section73';
+import Section74 from './components/Section74';
+import Section75 from './components/Section75';
+import Section76 from './components/Section76';
+import Section77 from './components/Section77';
+import Section78 from './components/Section78';
+import Section79 from './components/Section79';
+import Section80 from './components/Section80';
+import Section81 from './components/Section81';
+import Section82 from './components/Section82';
+import Section83 from './components/Section83';
+import Section84 from './components/Section84';
+import Section85 from './components/Section85';
+import Section86 from './components/Section86';
+import Section87 from './components/Section87';
+import Section88 from './components/Section88';
+import Section89 from './components/Section89';
+import Section90 from './components/Section90';
+import Section91 from './components/Section91';
+import Section92 from './components/Section92';
+import Section93 from './components/Section93';
+import Section94 from './components/Section94';
+import Section95 from './components/Section95';
+import Section96 from './components/Section96';
+import Section97 from './components/Section97';
+import Section98 from './components/Section98';
+import Section99 from './components/Section99';
+import Section100 from './components/Section100';
+import Section101 from './components/Section101';
+import Section102 from './components/Section102';
+import Section103 from './components/Section103';
+import Section104 from './components/Section104';
+import Section105 from './components/Section105';
+import Section106 from './components/Section106';
+import Section107 from './components/Section107';
+import Section108 from './components/Section108';
+import Section109 from './components/Section109';
+import Section110 from './components/Section110';
+import Section111 from './components/Section111';
+import Section112 from './components/Section112';
+import Section113 from './components/Section113';
+import Section114 from './components/Section114';
+import Section115 from './components/Section115';
+import Section116 from './components/Section116';
+import Section117 from './components/Section117';
+import Section118 from './components/Section118';
+import Section119 from './components/Section119';
+import Section120 from './components/Section120';
+import Section121 from './components/Section121';
+import Section122 from './components/Section122';
+import Section123 from './components/Section123';
+import Section124 from './components/Section124';
+import Section125 from './components/Section125';
+import Section126 from './components/Section126';
+import Section127 from './components/Section127';
+import Section128 from './components/Section128';
+import Section129 from './components/Section129';
+import Section130 from './components/Section130';
+import Section131 from './components/Section131';
+import Section132 from './components/Section132';
+import Section133 from './components/Section133';
+import Section134 from './components/Section134';
+import Section135 from './components/Section135';
+import Section136 from './components/Section136';
+import Section137 from './components/Section137';
+import Section138 from './components/Section138';
+import Section139 from './components/Section139';
+import Section140 from './components/Section140';
+import Section141 from './components/Section141';
+import Section142 from './components/Section142';
+import Section143 from './components/Section143';
+import Section144 from './components/Section144';
+import Section145 from './components/Section145';
+import Section146 from './components/Section146';
+
+export default function Home() {
+  // Restore useEffect logic here later.
+  useEffect(() => {
+    // TODO: Copy the original useEffect body back here.
+  }, []);
+
+  return (
+    <div className="miu-wrap">
+      <div className="miu-stage" style={{ "--sh": "10881px" }}>
+        <div className="miu-canvas-wrap">
+          <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: "10881px" }}>
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+          <Section5 />
+          <Section6 />
+          <Section7 />
+          <Section8 />
+          <Section9 />
+          <Section10 />
+          <Section11 />
+          <Section12 />
+          <Section13 />
+          <Section14 />
+          <Section15 />
+          <Section16 />
+          <Section17 />
+          <Section18 />
+          <Section19 />
+          <Section20 />
+          <Section21 />
+          <Section22 />
+          <Section23 />
+          <Section24 />
+          <Section25 />
+          <Section26 />
+          <Section27 />
+          <Section28 />
+          <Section29 />
+          <Section30 />
+          <Section31 />
+          <Section32 />
+          <Section33 />
+          <Section34 />
+          <Section35 />
+          <Section36 />
+          <Section37 />
+          <Section38 />
+          <Section39 />
+          <Section40 />
+          <Section41 />
+          <Section42 />
+          <Section43 />
+          <Section44 />
+          <Section45 />
+          <Section46 />
+          <Section47 />
+          <Section48 />
+          <Section49 />
+          <Section50 />
+          <Section51 />
+          <Section52 />
+          <Section53 />
+          <Section54 />
+          <Section55 />
+          <Section56 />
+          <Section57 />
+          <Section58 />
+          <Section59 />
+          <Section60 />
+          <Section61 />
+          <Section62 />
+          <Section63 />
+          <Section64 />
+          <Section65 />
+          <Section66 />
+          <Section67 />
+          <Section68 />
+          <Section69 />
+          <Section70 />
+          <Section71 />
+          <Section72 />
+          <Section73 />
+          <Section74 />
+          <Section75 />
+          <Section76 />
+          <Section77 />
+          <Section78 />
+          <Section79 />
+          <Section80 />
+          <Section81 />
+          <Section82 />
+          <Section83 />
+          <Section84 />
+          <Section85 />
+          <Section86 />
+          <Section87 />
+          <Section88 />
+          <Section89 />
+          <Section90 />
+          <Section91 />
+          <Section92 />
+          <Section93 />
+          <Section94 />
+          <Section95 />
+          <Section96 />
+          <Section97 />
+          <Section98 />
+          <Section99 />
+          <Section100 />
+          <Section101 />
+          <Section102 />
+          <Section103 />
+          <Section104 />
+          <Section105 />
+          <Section106 />
+          <Section107 />
+          <Section108 />
+          <Section109 />
+          <Section110 />
+          <Section111 />
+          <Section112 />
+          <Section113 />
+          <Section114 />
+          <Section115 />
+          <Section116 />
+          <Section117 />
+          <Section118 />
+          <Section119 />
+          <Section120 />
+          <Section121 />
+          <Section122 />
+          <Section123 />
+          <Section124 />
+          <Section125 />
+          <Section126 />
+          <Section127 />
+          <Section128 />
+          <Section129 />
+          <Section130 />
+          <Section131 />
+          <Section132 />
+          <Section133 />
+          <Section134 />
+          <Section135 />
+          <Section136 />
+          <Section137 />
+          <Section138 />
+          <Section139 />
+          <Section140 />
+          <Section141 />
+          <Section142 />
+          <Section143 />
+          <Section144 />
+          <Section145 />
+          <Section146 />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
