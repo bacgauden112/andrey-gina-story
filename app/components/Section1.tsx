@@ -27,7 +27,7 @@ export default function Section1() {
               SAVE THE DATE
             </div>
             <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"30px","color":"rgb(255, 255, 255)"}}>
-              31.12.2026
+              25.12.2026
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function Section1() {
           <div style={{"fontFamily":"\"High Spirited\", cursive","fontSize":"45px","color":"rgb(161, 137, 85)"}}>
             Ninh Giang
           </div>
-          <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","color":"rgb(161, 137, 85)","marginTop":"15px","textTransform":"uppercase"}}>
+          <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","color":"rgb(161, 137, 85)","marginTop":"45px","textTransform":"uppercase"}}>
             IS HAPPENING IN
           </div>
         </div>

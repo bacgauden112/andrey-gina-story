@@ -20,7 +20,7 @@ export default function Section4() {
           TƯ GIA NHÀ TRAI
         </div>
 <div data-node-id="element_text_5gqwhq0yg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInDown" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"7.5869391025641px","top":"3315.6890524839746px","width":"563.8682892628206px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"italic","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          43A ngõ 26 Phạm Ngọc Thạch, Đống Đa, TP. Hà Nội
+          Hoàng Mai, Đống Đa, TP. Hà Nội
         </div>
 <button data-node-id="element_button_j0zqrjkyg4k" data-anim-preset="pulse" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="1" data-miu-btn="1" data-action="link" data-url="https://maps.app.goo.gl/3sRtMKpFt2iMwbtQ7" data-newtab="1" data-target-id="" data-copy="" data-modal-id="" type="button" style={{"position":"absolute","left":"166.31684027777777px","top":"3383.3920773237182px","width":"240px","height":"52px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"flex","alignItems":"center","justifyContent":"center","padding":"10px 14px 10px 14px","borderRadius":"12px","border":"0px solid rgba(0,0,0,0)","background":"transparent","color":"#928362","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"800","cursor":"pointer","userSelect":"none","boxSizing":"border-box"}}>
           <span style={{"width":"31px","height":"31px","display":"inline-flex","alignItems":"center","justifyContent":"center","color":"#928362","marginRight":"12px","flex":"0 0 auto"}}><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +42,16 @@ export default function Section4() {
           TƯ GIA NHÀ GÁI
         </div>
 <div data-node-id="element_text_vk2q8aayg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInLeft" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"-0.0492788px","top":"2259.83px","width":"272.717px","height":"25px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"19px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInLeft"}}>
-          Ông: Nguyễn Gia Bảo
+          Ông: Đặng Quang Thuật
         </div>
 <div data-node-id="element_text_ghz6ni9yg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInLeft" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"5.54048px","top":"2286.27px","width":"268.539px","height":"25px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"19px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInLeft"}}>
-          Bà: Hoàng Thị Cúc
+          Bà: Trịnh Thị Thìn
         </div>
 <div data-node-id="element_text_flwl4zryg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInRight" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"302.112px","top":"2259.18px","width":"274.935px","height":"25px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"19px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInRight"}}>
-          Ông: Đào Duy Linh
+          Ông: Trường
         </div>
 <div data-node-id="element_text_okx2buiyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInRight" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"307.048px","top":"2286.61px","width":"264.286px","height":"25px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"19px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInRight"}}>
-          Bà: Tô Thị Hoàng
+          Bà: Phạm Thị Đam
         </div>
 
     </>

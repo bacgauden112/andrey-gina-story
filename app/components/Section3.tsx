@@ -44,7 +44,7 @@ export default function Section3() {
           12
         </div>
 <div data-node-id="element_text_q2o0xv0yg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"240.67042267628204px","top":"3065.7108874198716px","width":"98.84660456730765px","height":"65px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"50px","fontWeight":"200","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          31
+          25
         </div>
 <div data-node-id="element_text_48ebgjgyg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"440.6544425626456px","top":"3085.8335837339746px","width":"58.58864637966198px","height":"33px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"700","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           2026

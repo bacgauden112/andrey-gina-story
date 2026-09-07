@@ -54,7 +54,7 @@ export default function Section2() {
           SAVE THE DATE
         </div>
 <div data-node-id="element_text_kgsv2hn0idt" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"162.439px","top":"767.732px","width":"248.334px","height":"39px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"30px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
-          31.12.2026
+          25.12.2026
         </div>
 <div data-node-id="element_text_4lomnxcqk9p" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"189.539px","top":"1743.87px","width":"194.158px","height":"78px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"left","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"60px","fontWeight":"400","fontStyle":"normal","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
           This Day
