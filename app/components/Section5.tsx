@@ -55,7 +55,7 @@ export default function Section5() {
           ____________
         </div>
 <div data-node-id="element_text_g8b3e1raxa7" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"235.66417935363245px","top":"3628.6401909722217px","width":"98.84660456730765px","height":"65px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"50px","fontWeight":"200","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          30
+          18
         </div>
 
     </>

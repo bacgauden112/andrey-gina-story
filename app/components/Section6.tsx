@@ -14,10 +14,10 @@ export default function Section6() {
           ĐƯỢC TỔ CHỨC
         </div>
 <div data-node-id="element_text_9ewwnrvaxa7" data-node-type="element_text" data-manual-sized="1" data-anim-preset="flipInX" data-anim-duration="1500" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"3.492573581745951px","top":"3528.2347437718527px","width":"255.4957850648159px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"right","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          LỄ VU QUY
+          LỄ ĂN HỎI
         </div>
 <div data-node-id="element_text_0lw6lhhaxa7" data-node-type="element_text" data-manual-sized="1" data-anim-preset="flipInX" data-anim-duration="1500" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"279.53386478972413px","top":"3558.49749447601px","width":"31.970986912393215px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          08
+          11
         </div>
 <div data-node-id="element_text_pgq6tlaaxa7" data-node-type="element_text" data-manual-sized="1" data-anim-preset="flipInX" data-anim-duration="1500" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"18.497735368066202px","top":"3558.63421322601px","width":"260.27838369516223px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"right","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           VÀO LÚC
@@ -29,7 +29,7 @@ export default function Section6() {
           00
         </div>
 <div data-node-id="element_text_o3tma8naxa7" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"189.17093106546236px","top":"3649.3285392992425px","width":"30.39379977661224px","height":"33px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"700","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          12
+          10
         </div>
 <div data-node-id="element_text_hqcv1ouaxa7" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"91.87757533265349px","top":"3650.145765042249px","width":"96.81464889277385px","height":"33px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"700","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           THÁNG
@@ -44,7 +44,7 @@ export default function Section6() {
           Tại địa điểm
         </div>
 <div data-node-id="element_text_fshrpz5da1a" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInDown" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"3.8012152777777795px","top":"3732.497612847222px","width":"563.8682892628206px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"italic","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          (Tức ngày 22 tháng 11 năm Bính Ngọ)
+          (Tức ngày 09 tháng 09 năm Bính Ngọ)
         </div>
 <div data-node-id="element_image_8re37pnogld" style={{"position":"absolute","left":"1.4253472222222232px","top":"4069.915364583333px","width":"576.8951489049144px","height":"870.2756243322651px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
