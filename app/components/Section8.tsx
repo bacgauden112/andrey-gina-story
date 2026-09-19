@@ -29,7 +29,7 @@ export default function Section8() {
         </div>
 <div data-node-id="element_image_ss0z1sox79t" data-anim-preset="rotateInDownLeft" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"92.48046875000003px","top":"5429.489459929589px","width":"201.36257314136435px","height":"270.9991916138603px","zIndex":"0","opacity":"0","--miu-node-rotate":"-14.253931432707958deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/1779329616525-699957377_1436901785147050_2763405141742427126_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/v1789790114/TIT02777.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
 <div data-node-id="element_shape_nnwtslwx79t" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"248.57552083333331px","top":"5651.992498124035px","width":"211.04159475429384px","height":"281.98381941565833px","zIndex":"0","opacity":"0","boxShadow":"0 10px 30px rgba(0, 0, 0, 0.15)","--miu-node-rotate":"10.281755059169484deg","transform":"rotate(var(--miu-node-rotate, 0deg))"}}>
@@ -39,7 +39,7 @@ export default function Section8() {
         </div>
 <div data-node-id="element_image_qsuv57fx79u" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"253.57673221046915px","top":"5657.736081317512px","width":"201.36257314136435px","height":"270.9991916138603px","zIndex":"0","opacity":"0","--miu-node-rotate":"10.281755059169484deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/1779329624271-696512383_1436908838479678_7514213783209787614_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/v1789790112/TIT03140.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
 <div data-node-id="element_text_owooaffx79u" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInDown" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"145.4533420138889px","top":"5774.160249860145px","width":"78.8036024305556px","height":"26px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"right","fontFamily":"'Playfair Display', Georgia, 'Times New Roman', serif","fontSize":"20px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
@@ -74,6 +74,8 @@ export default function Section8() {
             <div style={{"textAlign":"center"}}>CN</div>
           </div>
           <div style={{"display":"grid","gridTemplateColumns":"repeat(7, 1fr)","gap":"4px","flex":"1","alignContent":"start","fontSize":"18px","fontWeight":"600"}}>
+            <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
+            <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
               1
@@ -148,7 +150,15 @@ export default function Section8() {
               24
             </div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
-              25
+              <div style={{"width":"42px","height":"42px","position":"relative","display":"flex","alignItems":"center","justifyContent":"center"}} data-anim-preset="heartBeat" data-anim-duration="1200" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="1">
+                <div style={{"position":"relative","width":"42px","height":"33.6px","transform":"translateY(5%)"}}>
+                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(-45deg)","transformOrigin":"0 100%","left":"21px","top":"0"}}></div>
+                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(45deg)","transformOrigin":"100% 100%","left":"0","top":"0"}}></div>
+                  <div style={{"position":"absolute","top":"50%","left":"50%","transform":"translate(-50%, -50%)","color":"#ffffff","fontWeight":"700","fontSize":"18.900000000000002px","zIndex":"1","padding":"2px 4px"}}>
+                    25
+                  </div>
+                </div>
+              </div>
             </div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
               26
@@ -166,18 +176,8 @@ export default function Section8() {
               30
             </div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
-              <div style={{"width":"42px","height":"42px","position":"relative","display":"flex","alignItems":"center","justifyContent":"center"}} data-anim-preset="heartBeat" data-anim-duration="1200" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="1">
-                <div style={{"position":"relative","width":"42px","height":"33.6px","transform":"translateY(5%)"}}>
-                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(-45deg)","transformOrigin":"0 100%","left":"21px","top":"0"}}></div>
-                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(45deg)","transformOrigin":"100% 100%","left":"0","top":"0"}}></div>
-                  <div style={{"position":"absolute","top":"50%","left":"50%","transform":"translate(-50%, -50%)","color":"#ffffff","fontWeight":"700","fontSize":"18.900000000000002px","zIndex":"1","padding":"2px 4px"}}>
-                    31
-                  </div>
-                </div>
-              </div>
+              31
             </div>
-            <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
-            <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"0.25","border":"1px solid transparent","boxSizing":"border-box"}}></div>
           </div>
         </div>

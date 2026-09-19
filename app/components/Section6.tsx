@@ -48,7 +48,7 @@ export default function Section6() {
         </div>
 <div data-node-id="element_image_8re37pnogld" style={{"position":"absolute","left":"1.4253472222222232px","top":"4069.915364583333px","width":"576.8951489049144px","height":"870.2756243322651px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/1779329623626-699953913_1436906381813257_1830912369741792704_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/TIT02722.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
             <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"#000000","opacity":"0.3","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
           </div>
         </div>

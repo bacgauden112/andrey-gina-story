@@ -26,7 +26,7 @@ export default function Section2() {
         </div>
 <div data-node-id="element_image_stfrz6urwur" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"420.85px","top":"1069.49px","width":"94.675px","height":"131.402px","zIndex":"0","--miu-node-rotate":"10.223401008290473deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-rotateInDownRight"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/1779329621443-696231062_1436905638479998_8594977868034456452_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/v1789790110/TIT02269.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
 <div data-node-id="element_image_xg7b3intc8w" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"423.794px","top":"1173.31px","width":"100.812px","height":"457.407px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeIn"}}>
@@ -46,7 +46,7 @@ export default function Section2() {
         </div>
 <div data-node-id="element_image_kn2hg0tvodq" data-anim-preset="flipInY" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-5.51454px","top":"1738.81px","width":"582.124px","height":"363.361px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-flipInY"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/1779329618665-699398090_1436903651813530_152410612304746230_n.webp" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/v1789790110/TIT03986.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
             <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"linear-gradient(\n                  to bottom,\n                  rgba(0, 0, 0, 0.4) 0%,\n                  rgba(0, 0, 0, 0) 60%\n                )","opacity":"1","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
           </div>
         </div>
