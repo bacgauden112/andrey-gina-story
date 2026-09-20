@@ -1,61 +1,117 @@
-// @ts-nocheck
 import React from 'react';
 
 export default function Section3() {
   return (
-    <>
-<div data-node-id="element_image_mfzganqsygz" style={{"position":"absolute","left":"-5.309895833333329px","top":"3701.406901041666px","width":"583.8120659722222px","height":"478.79991319444446px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
-          <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/jadhaksjdnw1jl1231.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+    <section style={{ position: 'relative', width: '100%', minHeight: '100vh', overflow: 'hidden' }}>
+      {/* Background Textures & Flowers */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        {/* Paper texture repeating vertically */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(./assets/ndbasjdhsakjdhaskjdaksd.png)', backgroundSize: 'cover', backgroundRepeat: 'repeat-y' }}></div>
+        {/* Top-left flower (flipped) */}
+        <img src="./assets/hdaskjdh123j1o2i3j1.png" style={{ position: 'absolute', top: '-100px', left: '-50px', width: '100%', maxWidth: '600px', transform: 'scaleX(-1)', opacity: 0.8 }} alt="" />
+        {/* Bottom-right flower */}
+        <img src="./assets/jadhaksjdnw1jl1231.png" style={{ position: 'absolute', bottom: '-50px', right: '-50px', width: '100%', maxWidth: '600px', opacity: 0.8 }} alt="" />
+      </div>
+
+      {/* Content Wrapper */}
+      <div style={{ position: 'relative', zIndex: 1, padding: '60px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px', color: '#928362', fontFamily: 'Lora, Georgia, "Times New Roman", serif' }}>
+        
+        {/* Parents Names */}
+        <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'flex-start', maxWidth: '500px' }}>
+          {/* Nhà Trai */}
+          <div data-anim-preset="lightSpeedInLeft" style={{ flex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>NHÀ TRAI</div>
+            <div style={{ fontSize: '19px' }}>Ông: Đặng Quang Thuật</div>
+            <div style={{ fontSize: '19px' }}>Bà: Trịnh Thị Thìn</div>
           </div>
-        </div>
-<div data-node-id="element_image_0cw5t7ft3di" style={{"position":"absolute","left":"-7.0718315972222126px","top":"2102.7356770833335px","width":"586.3426649305555px","height":"455.9097222222222px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
-          <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/hdaskjdh123j1o2i3j1.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(-1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          {/* Separator */}
+          <div style={{ width: '1px', backgroundColor: '#928362', alignSelf: 'stretch', margin: '0 10px', opacity: 0.5 }}></div>
+          {/* Nhà Gái */}
+          <div data-anim-preset="lightSpeedInRight" style={{ flex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>NHÀ GÁI</div>
+            <div style={{ fontSize: '19px' }}>Ông: Trần Mậu Trường</div>
+            <div style={{ fontSize: '19px' }}>Bà: Phạm Thị Đam</div>
           </div>
-        </div>
-<div data-node-id="element_image_g9ikooexrlz" style={{"position":"absolute","left":"-2.065538194444443px","top":"2555.916883680555px","width":"574.3435329861111px","height":"1150.6265190972222px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
-          <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/ndbasjdhsakjdhaskjdaksd.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
-          </div>
-        </div>
-<div data-node-id="element_text_lehwbwoyg4j" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInLeft" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"5.00429px","top":"2218.01px","width":"272.023px","height":"27px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInLeft"}}>
-          NHÀ TRAI
-        </div>
-<div data-node-id="element_text_uq8g3xeyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="lightSpeedInRight" data-anim-duration="1000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"295.929px","top":"2217.23px","width":"270.448px","height":"27px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-lightSpeedInRight"}}>
-          NHÀ GÁI
-        </div>
-<div data-node-id="element_text_1j5oomuyg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"241.3114010433801px","top":"2248.4178112017426px","width":"128.7226303056206px","height":"50px","zIndex":"0","opacity":"1","--miu-node-rotate":"90.61208604205366deg","transform":"rotate(var(--miu-node-rotate, 0deg))","display":"block","textAlign":"left","fontSize":"38.12px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          _______
-        </div>
-<div data-node-id="element_text_buzr73nyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="5000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"123.177px","top":"2372.93px","width":"328.092px","height":"40.5115px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"5000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
-          Trân trọng kính mời
-        </div>
-<div data-node-id="element_text_6dm82mcyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"1.61842px","top":"2750px","width":"565.977px","height":"104px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"70px","fontWeight":"400","fontStyle":"normal","textTransform":"capitalize","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"2000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
-          Ninh Giang
-        </div>
-<div data-node-id="element_text_t0m0p7hyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"234.861px","top":"2650px","width":"104.652px","height":"112px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"75px","fontWeight":"400","fontStyle":"normal","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"2000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
-          &amp;
-        </div>
-<div data-node-id="element_text_swggnfdyg4k" data-node-type="element_text" data-manual-sized="1" data-anim-preset="flipInX" data-anim-duration="1500" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2,0.8,0.2,1)" data-anim-loop="0" style={{"position":"absolute","left":"299.0824652777777px","top":"2956.973474225428px","width":"276.902830987914px","height":"27px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"21px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          ĐƯỢC TỔ CHỨC
-        </div>
-<div data-node-id="element_text_7i58qwlyg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"192.16699749902875px","top":"3085.8862179487187px","width":"30.39379977661224px","height":"33px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"700","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          10
-        </div>
-<div data-node-id="element_text_q2o0xv0yg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"240.67042267628204px","top":"3065.7108874198716px","width":"98.84660456730765px","height":"65px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"50px","fontWeight":"200","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          25
-        </div>
-<div data-node-id="element_text_48ebgjgyg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"440.6544425626456px","top":"3085.8335837339746px","width":"58.58864637966198px","height":"33px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"700","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          2026
-        </div>
-<div data-node-id="element_text_m4e0nslyg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"100.43719951923076px","top":"3057.609324919872px","width":"130.04724969664625px","height":"26px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","display":"block","textAlign":"left","fontSize":"20px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          ____________
-        </div>
-<div data-node-id="element_text_sqelco8yg4k" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"100.46599559294872px","top":"3106.1285056089746px","width":"129.50012429600523px","height":"26px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","display":"block","textAlign":"left","fontSize":"20px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          ____________
         </div>
 
-    </>
+        {/* Invitation Text */}
+        <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
+          <div style={{ fontSize: '21px' }}>Trân trọng kính mời</div>
+          <div style={{ fontSize: '22px', fontWeight: 'bold', fontStyle: 'italic' }}>Quý khách</div>
+          <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>----------------------------------------</div>
+          <div style={{ fontSize: '21px' }}>Tham dự bữa tiệc chung vui cùng<br/>gia đình chúng tôi</div>
+        </div>
+
+        {/* Couple Names */}
+        <div data-anim-preset="fadeInUp" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', fontFamily: '"High Spirited", cursive', fontSize: '70px', color: '#a18955' }}>
+          <div>Quang Anh</div>
+          <div>&amp;</div>
+          <div>Ninh Giang</div>
+        </div>
+
+        {/* Lễ Thành Hôn */}
+        <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', width: '100%' }}>
+          <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC<br/>VÀO LÚC 08 GIỜ 00</div>
+          
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>THÁNG 10</div>
+            </div>
+            <div style={{ fontSize: '50px', fontWeight: '200' }}>25</div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>NĂM 2026</div>
+            </div>
+          </div>
+
+          <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>(Tức ngày 16 tháng 09 năm Bính Ngọ)</div>
+          <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
+          <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br/>Nguyên Đình</div>
+          <div style={{ fontSize: '21px', fontStyle: 'italic' }}>Tầng 4 - TTTM TRƯƠNG ĐỊNH PLAZA, 461 Trương Định, Phường Tương Mai, TP. Hà Nội</div>
+          
+          <a href="https://maps.app.goo.gl/RgNM4QepabMrQXEN9" target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
+            <svg width="31" height="31" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
+              <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="currentColor"></path>
+            </svg>
+            Chỉ đường
+          </a>
+        </div>
+
+        {/* Separator */}
+        <div style={{ fontSize: '20px', letterSpacing: '-2px', margin: '20px 0' }}>----------------------------------------------------------</div>
+
+        {/* Lễ Ăn Hỏi */}
+        <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', width: '100%' }}>
+          <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>LỄ ĂN HỎI ĐƯỢC TỔ CHỨC<br/>VÀO LÚC 11 GIỜ 00</div>
+          
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>THÁNG 10</div>
+            </div>
+            <div style={{ fontSize: '50px', fontWeight: '200' }}>18</div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>NĂM 2026</div>
+            </div>
+          </div>
+
+          <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>(Tức ngày 09 tháng 09 năm Bính Ngọ)</div>
+          <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
+          <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br/>PANDORA CENTER</div>
+          <div style={{ fontSize: '21px', fontStyle: 'italic' }}>Sảnh tiệc Athena 1 - Tầng 5<br/>12 Võ Nguyên Giáp, An Biên, Hải Phòng</div>
+          
+          <a href="https://maps.app.goo.gl/mdHRRwBDcrYHg4dWA" target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
+            <svg width="31" height="31" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
+              <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="currentColor"></path>
+            </svg>
+            Chỉ đường
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
