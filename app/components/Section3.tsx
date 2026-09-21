@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Section3() {
   return (
-    <section style={{ position: 'relative', width: '100%', minHeight: '100vh', overflow: 'hidden' }}>
+    <section style={{ position: 'absolute', top: '2102px', left: 0, width: '100%', overflow: 'hidden' }}>
       {/* Background Textures & Flowers */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         {/* Paper texture repeating vertically */}
