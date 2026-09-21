@@ -17,7 +17,7 @@ export default function OverlayComponent() {
     </div>
   ` }}></template>
 </div>
-<audio id="bgAudio" src="./audio/em_oi_sau_nay.m4a" loop="" hidden="" preload="metadata"></audio>
+<audio id="bgAudio" src="./audio/beautiful_in_white.m4a" loop hidden preload="metadata"></audio>
 <div className="miu-fab-dock" id="miuFabDock" data-open="1">
   <button id="miuFabToggle" className="miu-fab" type="button" aria-label="Mở menu">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
