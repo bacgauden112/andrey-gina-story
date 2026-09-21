@@ -6,14 +6,8 @@ export default function OverlayComponent({ guestName }: { guestName?: string }) 
 <div style={{"display":"none"}}>
   <template id="miu-modal-tpl-modal_cxcs136" data-bg="#ffffff" data-w="520" data-h="520" data-pad="18" data-radius="22" data-pres="center" data-close-backdrop="1" data-show-close="1" dangerouslySetInnerHTML={{ __html: `
     <div style="text-align: center; padding: 20px; font-family: Lora, Georgia, serif;">
-      <h3 style="color: #928362; margin-bottom: 15px; font-size: 24px;">Quà mừng cưới chú rể</h3>
-      <img src="./assets/qr-mung-cuoi.png" alt="QR Chú rể" style="width: 100%; max-width: 300px; border-radius: 12px; display: block; margin: 0 auto;" />
-    </div>
-  ` }}></template>
-  <template id="miu-modal-tpl-modal_cxcsepk" data-bg="#ffffff" data-w="520" data-h="520" data-pad="18" data-radius="22" data-pres="center" data-close-backdrop="1" data-show-close="1" dangerouslySetInnerHTML={{ __html: `
-    <div style="text-align: center; padding: 20px; font-family: Lora, Georgia, serif;">
-      <h3 style="color: #928362; margin-bottom: 15px; font-size: 24px;">Quà mừng cưới cô dâu</h3>
-      <img src="./assets/qr-mung-cuoi.png" alt="QR Cô dâu" style="width: 100%; max-width: 300px; border-radius: 12px; display: block; margin: 0 auto;" />
+      <h3 style="color: #928362; margin-bottom: 15px; font-size: 24px;">Quà mừng cưới</h3>
+      <img src="./assets/qr-mung-cuoi.png" alt="QR Quà mừng cưới" style="width: 100%; max-width: 300px; border-radius: 12px; display: block; margin: 0 auto;" />
     </div>
   ` }}></template>
 </div>
