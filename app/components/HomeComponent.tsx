@@ -11,7 +11,7 @@ import Section9 from './Section9';
 import Section10 from './Section10';
 import OverlayComponent from './OverlayComponent';
 
-export default function HomeComponent() {
+export default function HomeComponent({ guest }: { guest?: any }) {
   useEffect(() => {
 (function () {
       try {
@@ -2315,16 +2315,16 @@ export default function HomeComponent() {
             <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: "10881px" }}>
               <Section1 />
               <Section2 />
-              <Section3 />
+              <Section3 guestName={guest?.name} />
               <Section7 />
               <Section8 />
               <Section9 />
-              <Section10 />
+              <Section10 guestName={guest?.name} guestId={guest?.id} />
             </div>
           </div>
         </div>
       </div>
-      <OverlayComponent />
+      <OverlayComponent guestName={guest?.name} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Section3() {
+export default function Section3({ guestName }: { guestName?: string }) {
   return (
     <section style={{ position: 'absolute', top: '2102px', left: 0, width: '100%', overflow: 'hidden' }}>
       {/* Background Textures & Flowers */}
@@ -37,7 +37,7 @@ export default function Section3() {
         {/* Invitation Text */}
         <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
           <div style={{ fontSize: '21px' }}>Trân trọng kính mời</div>
-          <div style={{ fontSize: '22px', fontWeight: 'bold', fontStyle: 'italic' }}>Quý khách</div>
+          <div style={{ fontSize: '22px', fontWeight: 'bold', fontStyle: 'italic' }}>{guestName ? guestName : 'Quý khách'}</div>
           <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>----------------------------------------</div>
           <div style={{ fontSize: '21px' }}>Tham dự bữa tiệc chung vui cùng<br/>gia đình chúng tôi</div>
         </div>

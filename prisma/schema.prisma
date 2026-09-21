@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model Guest {
+  id          String   @id @default(cuid())
+  name        String
+  status      String   @default("CHUA_XAC_NHAN") // CHUA_XAC_NHAN, THAM_GIA, KHONG_THAM_GIA
+  guestCount  Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

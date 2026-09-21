@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-export default function OverlayComponent() {
+export default function OverlayComponent({ guestName }: { guestName?: string }) {
   return (
     <>
 <div style={{"display":"none"}}>
@@ -56,9 +56,12 @@ export default function OverlayComponent() {
       <div className="miu-envelope" aria-hidden="false">
         <div className="miu-env-top">
           <div className="miu-env-frame">
+            <div className="miu-env-to">
+              {/* <div className="miu-env-invite">{guestName ? guestName : 'Quý khách'}</div> */}
+            </div>
             <div className="miu-env-content" aria-hidden="true">
               <div className="miu-env-title">Trân trọng kính mời</div>
-              <div className="miu-env-invite">Quý khách</div>
+              <div className="miu-env-invite">{guestName ? guestName : 'Quý khách'}</div>
               <p style={{"margin":"-10px 0","color":"var(--opening-invite-color, rgba(0, 0, 0, 0.62))"}}>
                 ------------------------------------------------
               </p>

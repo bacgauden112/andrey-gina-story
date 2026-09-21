@@ -1,7 +1,37 @@
 // @ts-nocheck
 import React from 'react';
+import React, { useState } from 'react';
 
-export default function Section10() {
+export default function Section10({ guestName, guestId }: { guestName?: string, guestId?: string }) {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!guestId) {
+      alert('Vui lòng truy cập bằng link dành riêng cho bạn để gửi RSVP.');
+      return;
+    }
+    
+    setLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const willAttend = formData.get('willAttend');
+    const numberOfGuests = formData.get('numberOfGuests');
+    
+    try {
+      const res = await fetch(`/api/guests/${guestId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          status: willAttend === 'yes' ? 'THAM_GIA' : 'KHONG_THAM_GIA',
+          guestCount: Number(numberOfGuests) || 1
+        })
+      });
+      if (res.ok) setSuccess(true);
+    } catch (err) {}
+    setLoading(false);
+  };
+
   return (
     <>
 <div data-node-id="element_image_tnpiwou4hwe" style={{"position":"absolute","left":"-1.291883680555543px","top":"8906.072048611111px","width":"574.7977430555555px","height":"560.4379340277778px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
@@ -21,43 +51,37 @@ export default function Section10() {
             </div>
 
             <div className="miu-rsvp-form-wrap" style={{"background":"rgba(17, 24, 39, 0.06)","borderRadius":"12px","padding":"14px"}}>
-              <form data-miu-rsvp-form="1" data-miu-rsvp-id="element_rsvp_dni58kn4w7l" style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
-                <input type="text" name="guestName" placeholder="Họ và tên *" required="" className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
-                <label className="miu-rsvp-label">
-                  <div className="miu-rsvp-label-text">Số người tham dự</div>
-                  <input type="number" name="numberOfGuests" min="1" step="1" defaultValue="1" placeholder="Ví dụ: 2" className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
-                </label>
-                <div className="miu-rsvp-radio" data-kind="attendance">
-                  <label><input type="radio" name="willAttend" value="yes" defaultChecked />
-                    Có, tôi sẽ tham dự</label>
-                  <label><input type="radio" name="willAttend" value="no" /> Xin
-                    lỗi, tôi bận mất rồi!</label>
+              {success ? (
+                <div style={{ textAlign: 'center', fontSize: '20px', color: '#928362', padding: '20px 0' }}>
+                  Cảm ơn <strong>{guestName || 'bạn'}</strong> đã xác nhận!<br/>Chúng mình rất mong được gặp bạn.
                 </div>
-                <div className="miu-rsvp-radio" data-kind="side">
-                  <label><input type="radio" name="eventType" value="nhatrai" defaultChecked />
-                    Khách của chú rể</label>
-                  <label><input type="radio" name="eventType" value="nhagai" />
-                    Khách của cô dâu</label>
-                </div>
-                <label className="miu-rsvp-label">
-                  <div className="miu-rsvp-label-text">
-                    Bạn sẽ tham gia sự kiện nào
+              ) : (
+                <form onSubmit={handleSubmit} style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
+                  <div style={{ fontSize: '22px', color: '#928362', textAlign: 'center', marginBottom: '10px' }}>
+                    Xin chào <strong>{guestName || 'Quý khách'}</strong>
                   </div>
-                  <select name="eventName" className="miu-rsvp-select" aria-label="Bạn sẽ tham gia sự kiện nào">
-                    <option value="">Bạn sẽ tham gia sự kiện nào</option>
-                    <option value="Lễ nhà trai">Lễ nhà trai</option>
-                    <option value="Lễ nhà gái">Lễ nhà gái</option>
-                    <option value="Tiệc cưới">Tiệc cưới</option>
-                  </select>
-                </label>
-                <textarea name="message" placeholder="Lời nhắn cho Cô Dâu &amp; Chú Rể" className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
-
-                <div style={{"display":"flex","alignItems":"center","justifyContent":"center","marginTop":"22px"}}>
-                  <button type="submit" data-miu-rsvp-submit="1" data-miu-rsvp-id="element_rsvp_dni58kn4w7l" style={{"appearance":"none","border":"0","background":"#928362","color":"#ffffff","borderRadius":"999px","padding":"12px 18px","fontWeight":"600","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","minWidth":"180px"}}>
-                    Xác nhận
-                  </button>
-                </div>
-              </form>
+                  
+                  <label className="miu-rsvp-label">
+                    <div className="miu-rsvp-label-text">Số người tham dự</div>
+                    <input type="number" name="numberOfGuests" min="1" step="1" defaultValue="1" placeholder="Ví dụ: 2" className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
+                  </label>
+                  
+                  <div className="miu-rsvp-radio" data-kind="attendance">
+                    <label><input type="radio" name="willAttend" value="yes" defaultChecked />
+                      Có, tôi sẽ tham dự</label>
+                    <label><input type="radio" name="willAttend" value="no" /> Xin
+                      lỗi, tôi bận mất rồi!</label>
+                  </div>
+                  
+                  <textarea name="message" placeholder="Lời nhắn cho Cô Dâu &amp; Chú Rể" className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
+  
+                  <div style={{"display":"flex","alignItems":"center","justifyContent":"center","marginTop":"22px"}}>
+                    <button type="submit" disabled={loading || !guestId} style={{"appearance":"none","border":"0","background":"#928362","color":"#ffffff","borderRadius":"999px","padding":"12px 18px","fontWeight":"600","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","minWidth":"180px", opacity: (loading || !guestId) ? 0.5 : 1}}>
+                      {loading ? 'Đang gửi...' : (guestId ? 'Xác nhận' : 'Vui lòng truy cập bằng link cá nhân')}
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
         </section>
