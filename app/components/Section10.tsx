@@ -1,10 +1,68 @@
 // @ts-nocheck
-import React from 'react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+type Wish = {
+  id: string;
+  name: string;
+  content: string;
+  createdAt: string;
+};
 
 export default function Section10({ guestName, guestId }: { guestName?: string, guestId?: string }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [loadingWishes, setLoadingWishes] = useState(false);
+  const [submittingWish, setSubmittingWish] = useState(false);
+  const [wishSuccess, setWishSuccess] = useState(false);
+
+  useEffect(() => {
+    fetchWishes();
+  }, []);
+
+  const fetchWishes = async () => {
+    setLoadingWishes(true);
+    try {
+      const res = await fetch('/api/wishes');
+      if (res.ok) {
+        const data = await res.json();
+        setWishes(data);
+      }
+    } catch (error) {
+      console.error('Error fetching wishes:', error);
+    }
+    setLoadingWishes(false);
+  };
+
+  const handleWishSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmittingWish(true);
+    setWishSuccess(false);
+    
+    const formData = new FormData(e.currentTarget);
+    const name = guestName || "Khách ẩn danh";
+    const content = formData.get('comment') as string;
+
+    try {
+      const res = await fetch('/api/wishes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, content }),
+      });
+
+      if (res.ok) {
+        setWishSuccess(true);
+        e.currentTarget.reset();
+        fetchWishes(); // Refresh the list
+      }
+    } catch (error) {
+      console.error('Error submitting wish:', error);
+    }
+    setSubmittingWish(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -103,41 +161,35 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
             </div>
 
             <div className="miu-wishes-form-wrap" style={{"background":"#928362","borderRadius":"12px","padding":"14px"}}>
-              <form data-miu-wishes-form="1" data-miu-wishes-id="element_wishes_hafv0w9720j" style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
-                <input type="text" name="fullname" placeholder="Nhập tên của bạn*" required="" style={{"width":"100%","border":"1px solid rgba(0, 0, 0, 0.12)","borderRadius":"10px","padding":"10px 12px","fontSize":"20px","color":"#928362"}} />
-                <textarea name="comment" placeholder="Nhập lời chúc của bạn*" required="" style={{"width":"100%","border":"1px solid rgba(0, 0, 0, 0.12)","borderRadius":"10px","padding":"10px 12px","fontSize":"20px","minHeight":"30px","resize":"vertical","color":"#928362"}}></textarea>
+              <form onSubmit={handleWishSubmit} style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
+                {wishSuccess && <div style={{ color: '#ffffff', textAlign: 'center', marginBottom: '10px' }}>Cảm ơn bạn đã gửi lời chúc!</div>}
+                <div style={{ fontSize: '20px', color: '#ffffff', marginBottom: '5px' }}>
+                  Gửi lời chúc từ: <strong>{guestName || 'Khách ẩn danh'}</strong>
+                </div>
+                <textarea name="comment" placeholder="Nhập lời chúc của bạn*" required style={{"width":"100%","border":"1px solid rgba(0, 0, 0, 0.12)","borderRadius":"10px","padding":"10px 12px","fontSize":"20px","minHeight":"30px","resize":"vertical","color":"#928362","background":"#ffffff"}}></textarea>
                 <div style={{"display":"flex","alignItems":"center","justifyContent":"center"}}>
-                  <button type="submit" data-miu-wishes-submit="1" data-miu-wishes-id="element_wishes_hafv0w9720j" style={{"appearance":"none","border":"0","background":"#928362","color":"#ffffff","borderRadius":"10px","padding":"10px 16px","fontWeight":"900","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","fontFamily":"Lora"}}>
-                    Gửi lời chúc
+                  <button type="submit" disabled={submittingWish} style={{"appearance":"none","border":"0","background":"#928362","color":"#ffffff","borderRadius":"10px","padding":"10px 16px","fontWeight":"900","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","fontFamily":"Lora", "opacity": submittingWish ? 0.5 : 1}}>
+                    {submittingWish ? 'Đang gửi...' : 'Gửi lời chúc'}
                   </button>
                 </div>
               </form>
             </div>
 
             <div data-miu-wishes-list="1" data-miu-wishes-id="element_wishes_hafv0w9720j" style={{"background":"rgba(255, 255, 255, 0.6)","borderRadius":"12px","flex":"1 1 auto","minHeight":"0px","overflow":"auto"}}>
-              <div className="miu-wishes-item">
-                <div className="miu-wishes-name">Hoàng</div>
-                <div className="miu-wishes-comment">
-                  Chúc hai bạn luôn đồng hành cùng nhau, ăn ngon ngủ kỹ, kiếm
-                  nhiều tiền và hạnh phúc mỗi ngày 😄 Mãi giữ được tình yêu ngọt
-                  ngào như hôm nay nha 💖✨
-                </div>
-              </div>
-              <div className="miu-wishes-item">
-                <div className="miu-wishes-name">Hiếu</div>
-                <div className="miu-wishes-comment">
-                  🎉 Happy Wedding Giang &amp; Anh 💒❤️
-                </div>
-              </div>
-              <div className="miu-wishes-item">
-                <div className="miu-wishes-name">Lan nè</div>
-                <div className="miu-wishes-comment">
-                  💌 Chúc mừng đám cưới Giang &amp; Anh nhaaa 🥰 Cuối cùng cũng
-                  về chung một nhà rồi ❤️ Chúc hai bạn mãi hạnh phúc, lúc nào
-                  cũng yêu thương và nhường nhịn nhau như bây giờ ✨ Sớm có thêm
-                  nhiều niềm vui và thật nhiều kỷ niệm đẹp cùng nhau nhé 💕
-                </div>
-              </div>
+              {loadingWishes ? (
+                <div style={{ textAlign: 'center', padding: '20px', color: '#928362' }}>Đang tải...</div>
+              ) : wishes.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '20px', color: '#928362' }}>Chưa có lời chúc nào</div>
+              ) : (
+                wishes.map((wish) => (
+                  <div key={wish.id} className="miu-wishes-item">
+                    <div className="miu-wishes-name">{wish.name}</div>
+                    <div className="miu-wishes-comment">
+                      {wish.content}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
             <button type="button" data-miu-wishes-more="1" data-miu-wishes-id="element_wishes_hafv0w9720j" style={{"appearance":"none","border":"0px","background":"transparent","color":"rgb(29, 78, 216)","fontWeight":"900","cursor":"pointer","padding":"8px 0px","display":"none"}}>
               Xem thêm lời chúc ↓
