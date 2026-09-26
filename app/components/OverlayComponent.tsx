@@ -1,6 +1,38 @@
-// @ts-nocheck
-import React from 'react';
+"use client";
+import React, { useState, useRef, useEffect } from 'react';
+
 export default function OverlayComponent({ guestName }: { guestName?: string }) {
+  const [isFabOpen, setIsFabOpen] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
+
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+    };
+  }, []);
+
+  const toggleFab = () => setIsFabOpen(!isFabOpen);
+  
+  const toggleAudio = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(e => console.log("Audio play failed:", e));
+    }
+  };
+
   return (
     <>
 <div style={{"display":"none"}}>
@@ -11,20 +43,24 @@ export default function OverlayComponent({ guestName }: { guestName?: string }) 
     </div>
   ` }}></template>
 </div>
-<audio id="bgAudio" src="./audio/beautiful_in_white.m4a" loop hidden preload="metadata"></audio>
-<div className="miu-fab-dock" id="miuFabDock" data-open="1">
-  <button id="miuFabToggle" className="miu-fab" type="button" aria-label="Mở menu">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<audio ref={audioRef} id="bgAudio" src="./audio/beautiful_in_white.m4a" loop hidden preload="metadata"></audio>
+<div className="miu-fab-dock" id="miuFabDock" data-open={isFabOpen ? "1" : "0"}>
+  <button id="miuFabToggle" className="miu-fab" type="button" aria-label="Mở menu" onClick={toggleFab}>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: isFabOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
       <path d="M6 9l6 6 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
   </button>
 
-  <button id="audioToggleBtn" className="miu-fab miu-fab-item playing" type="button" aria-label="Toggle music" title="Nhạc" data-label="Nhạc">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 18V6l10-2v12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-      <circle cx="7" cy="18" r="3" stroke="white" strokeWidth="2" />
-      <circle cx="17" cy="16" r="3" stroke="white" strokeWidth="2" />
-    </svg>
+  <button id="audioToggleBtn" className={`miu-fab miu-fab-item ${isPlaying ? 'playing' : 'muted'}`} type="button" aria-label="Toggle music" title="Nhạc" data-label="Nhạc" onClick={toggleAudio}>
+    {isPlaying ? (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18V6l10-2v12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+      </svg>
+    ) : (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 3l14 9-14 9V3z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+      </svg>
+    )}
   </button>
 </div>
 <div id="miuOpening" data-open="0" aria-hidden="false" style={{"display":"none","cursor":"pointer"}}>

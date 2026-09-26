@@ -27,7 +27,7 @@ export default function Section1() {
               SAVE THE DATE
             </div>
             <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"30px","color":"rgb(255, 255, 255)"}}>
-              25.12.2026
+              25.10.2026
             </div>
           </div>
         </div>
