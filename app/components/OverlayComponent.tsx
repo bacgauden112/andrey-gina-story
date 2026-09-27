@@ -64,7 +64,7 @@ export default function OverlayComponent({ guestName }: { guestName?: string }) 
   </button>
 </div>
 <div id="miuOpening" data-open="0" aria-hidden="false" style={{"display":"none","cursor":"pointer"}}>
-  <div id="miuOpeningSides" className="default" role="dialog" aria-modal="true" style={{"--miu-opening-w":"600px"}}>
+  <div id="miuOpeningSides" className="default" role="dialog" aria-modal="true" style={{ "--miu-opening-w": "600px" } as React.CSSProperties}>
     <div className="card-side right" aria-hidden="true">
       <div className="miu-envelope" aria-hidden="true">
         <div className="miu-env-bottom">
