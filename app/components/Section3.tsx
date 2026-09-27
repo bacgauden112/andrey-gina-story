@@ -43,9 +43,9 @@ export default function Section3({ guestName }: { guestName?: string }) {
         </div>
 
         {/* Couple Names */}
-        <div data-anim-preset="fadeInUp" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', fontFamily: '"High Spirited", cursive', fontSize: '70px', color: '#a18955' }}>
+        <div data-anim-preset="fadeInUp" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', fontFamily: '"High Spirited", cursive', fontSize: '70px', color: '#a18955', lineHeight: '0.7' }}>
           <div>Quang Anh</div>
-          <div>&amp;</div>
+          <div style={{ fontSize: '70px', margin: '10px 0' }}>&amp;</div>
           <div>Ninh Giang</div>
         </div>
 

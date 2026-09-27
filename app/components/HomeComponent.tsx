@@ -2181,16 +2181,18 @@ export default function HomeComponent({ guest }: { guest?: any }) {
   return (
     <>
       <div className="miu-wrap">
-        <div className="miu-stage" style={{ "--sh": "10881px" }}>
+        <div className="miu-stage" style={{ "--sh": "10681px" }}>
           <div className="miu-canvas-wrap">
-            <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: "10881px" }}>
+            <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: "10681px" }}>
               <Section1 />
               <Section2 />
               <Section3 guestName={guest?.name} />
-              <Section7 />
-              <Section8 />
-              <Section9 />
-              <Section10 guestName={guest?.name} guestId={guest?.id} />
+              <div style={{ transform: 'translateY(-200px)' }}>
+                <Section7 />
+                <Section8 />
+                <Section9 />
+                <Section10 guestName={guest?.name} guestId={guest?.id} />
+              </div>
             </div>
           </div>
         </div>
