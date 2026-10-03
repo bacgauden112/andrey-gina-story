@@ -225,9 +225,8 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH' }: { 
                           <div style={QUESTION}>THÔNG TIN XE ĐƯA ĐÓN</div>
                           <div>Gia đình cô dâu có chuẩn bị xe đưa đón dành cho khách mời từ Hà Nội về dự tiệc tại Hải Phòng.</div>
                           <div>
-                            <div><strong>Thời gian tập trung:</strong> 08:30</div>
-                            <div><strong>Địa điểm:</strong> [Bổ sung địa điểm tập trung]</div>
-                            <div><strong>Liên hệ:</strong> Mr. Thắng · [Số điện thoại]</div>
+                            <div><strong>Thời gian tập trung:</strong> 8h30</div>
+                            <div><strong>Địa điểm và thông tin liên hệ:</strong> Sẽ được cập nhật sau</div>
                           </div>
                           <div>Vui lòng đăng ký số người đi xe để gia đình chuẩn bị chỗ ngồi chu đáo nhé.</div>
                           <label className="miu-rsvp-label">
