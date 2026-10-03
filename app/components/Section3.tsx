@@ -92,7 +92,7 @@ export default function Section3({ guestName }: { guestName?: string }) {
 
             <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>{p.lunar}</div>
             <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
-            <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br />{p.venue}</div>
+            <div style={{ fontSize: '22px', fontWeight: 'bold', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Trung tâm tổ chức sự kiện tiệc cưới<br />{p.venue}</div>
             <div style={{ fontSize: '21px', fontStyle: 'italic' }}>{p.address}</div>
 
             <a href={p.map} target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
