@@ -308,7 +308,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
         </section>
 <div data-node-id="element_image_orawxgf8amu" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-27.75086805555555px","top":"10401.419704861111px","width":"601.8897569444445px","height":"439.2137586805556px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/thank-you.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="./assets/thank-you.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 28%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
             <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"linear-gradient(\n                  to top,\n                  rgba(0, 0, 0, 0.4) 0%,\n                  rgba(0, 0, 0, 0) 60%\n                )","opacity":"1","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
           </div>
         </div>

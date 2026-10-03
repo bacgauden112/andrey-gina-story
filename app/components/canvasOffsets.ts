@@ -4,4 +4,4 @@
 export const SHIFT_AFTER_INVITE = 128; // Section3 is taller (two party blocks)
 export const SHIFT_AFTER_INTRO = 178; // Section8 gets longer (couple profiles)
 export const SHIFT_AFTER_ALBUM = -907; // Section9 album is shorter (two collages)
-export const CANVAS_BASE_H = 10881 + SHIFT_AFTER_INVITE + SHIFT_AFTER_INTRO + SHIFT_AFTER_ALBUM;
+export const CANVAS_BASE_H = 10640 + SHIFT_AFTER_INVITE + SHIFT_AFTER_INTRO + SHIFT_AFTER_ALBUM;
