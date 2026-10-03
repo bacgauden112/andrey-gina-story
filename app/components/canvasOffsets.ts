@@ -13,5 +13,5 @@ export function shiftAfterInvite(type: GuestType) {
 }
 
 export function canvasBaseH(type: GuestType) {
-  return 10640 + shiftAfterInvite(type) + SHIFT_AFTER_INTRO + SHIFT_AFTER_ALBUM;
+  return 10640 - 200 + shiftAfterInvite(type) + SHIFT_AFTER_INTRO + SHIFT_AFTER_ALBUM;
 }

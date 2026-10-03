@@ -549,9 +549,9 @@ export default function HomeComponent({ guest }: { guest?: any }) {
             // Auto expand height when some nodes (e.g. RSVP) render taller than configured h
             try {
               var baseH = CANVAS_BASE_H;
-              canvas.style.height = String(baseH) + 'px'; // reset so the height can shrink again
+              canvas.style.height = '0px'; // collapse first so the height can shrink again (the RSVP result is shorter than the form)
               var sh = Number(canvas.scrollHeight || 0);
-              var nextH = Math.max(baseH, sh || 0);
+              var nextH = sh || baseH;
               if (nextH && isFinite(nextH)) {
                 canvas.style.height = String(nextH) + 'px';
                 try { stage.style.setProperty('--sh', String(nextH) + 'px'); } catch (__e) { }
@@ -2037,7 +2037,7 @@ export default function HomeComponent({ guest }: { guest?: any }) {
                 <div style={{ transform: `translateY(${SHIFT_AFTER_INTRO}px)` }}>
                   <Section9 />
                   <div style={{ transform: `translateY(${SHIFT_AFTER_ALBUM}px)` }}>
-                    <Section10 guestName={guest?.name} guestId={guest?.id} guestType={guestType} />
+                    <Section10 guestName={guest?.name} guestId={guest?.id} guestType={guestType} rsvp={guest} />
                   </div>
                 </div>
               </div>

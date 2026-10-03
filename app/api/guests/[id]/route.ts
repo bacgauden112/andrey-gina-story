@@ -26,7 +26,8 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
     if (body.attendGroom !== undefined) updateData.attendGroom = Boolean(body.attendGroom);
     if (body.needShuttle !== undefined) updateData.needShuttle = Boolean(body.needShuttle);
     if (body.shuttleCount !== undefined) updateData.shuttleCount = Number(body.shuttleCount) || 0;
-    if (body.message !== undefined) updateData.message = body.message ? String(body.message).slice(0, 1000) : null;
+    const message = body.message !== undefined ? String(body.message || "").trim().slice(0, 1000) : undefined;
+    if (message !== undefined) updateData.message = message || null;
 
     const current = await prisma.guest.findUnique({ where: { id } });
     if (!current) return NextResponse.json({ error: "Guest not found" }, { status: 404 });
@@ -74,6 +75,21 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
       where: { id },
       data: updateData,
     });
+    // The RSVP message is the guestbook entry: one per guest, updated (not duplicated) when they answer again.
+    if (message !== undefined) {
+      if (message) {
+        const wishName =
+          (typeof body.wishName === "string" ? body.wishName.replace(/\s+/g, " ").trim().slice(0, 60) : "") || guest.name || "Ẩn danh";
+        await prisma.wish.upsert({
+          where: { guestId: id },
+          create: { guestId: id, name: wishName, content: message },
+          update: { name: wishName, content: message, createdAt: new Date() },
+        });
+      } else {
+        await prisma.wish.deleteMany({ where: { guestId: id } });
+      }
+    }
+
     return NextResponse.json(guest);
   } catch (error) {
     return NextResponse.json({ error: "Failed to update guest" }, { status: 500 });
@@ -83,6 +99,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
+    await prisma.wish.deleteMany({ where: { guestId: id } });
     await prisma.guest.delete({
       where: { id },
     });

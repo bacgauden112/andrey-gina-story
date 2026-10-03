@@ -57,6 +57,28 @@ export async function ensureGuestCodes() {
   return missing.length;
 }
 
+// The guestbook is the list of RSVP messages. A message saved only on the guest (e.g. by an older
+// deployment) gets its guestbook entry here, so the list never misses one.
+export async function syncGuestWishes() {
+  const [guests, wishes] = await Promise.all([
+    prisma.guest.findMany({
+      where: { message: { not: null } },
+      select: { id: true, name: true, message: true, updatedAt: true },
+    }),
+    prisma.wish.findMany({ where: { guestId: { not: null } }, select: { guestId: true } }),
+  ]);
+  const linked = new Set(wishes.map((w) => w.guestId));
+  for (const g of guests) {
+    const content = (g.message || "").trim();
+    if (!content || linked.has(g.id)) continue;
+    try {
+      await prisma.wish.create({ data: { guestId: g.id, name: g.name, content, createdAt: g.updatedAt } });
+    } catch (e) {
+      if ((e as { code?: string })?.code !== "P2002") throw e; // created at the same moment elsewhere
+    }
+  }
+}
+
 type Answers = { status: string; attendBride: boolean; attendGroom: boolean; needShuttle: boolean };
 
 // An answered RSVP stops being valid when it mentions a party the guest is no longer invited to.
