@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import { SHIFT_AFTER_INTRO } from "./canvasOffsets";
+import type { GuestType } from "@/lib/guest-types";
 
 const PROFILES = [
   {
@@ -45,7 +46,82 @@ function Profile({ role, name, meta, about }) {
   );
 }
 
-export default function Section8() {
+function Heart({ day }: { day: string }) {
+  return (
+    <div
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                data-anim-preset="heartBeat"
+                data-anim-duration="1200"
+                data-anim-delay="0"
+                data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)"
+                data-anim-loop="1"
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "42px",
+                    height: "33.6px",
+                    transform: "translateY(5%)",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      width: "21px",
+                      height: "33.6px",
+                      background: "#928362",
+                      borderRadius: "16.8px 16.8px 0 0",
+                      transform: "rotate(-45deg)",
+                      transformOrigin: "0 100%",
+                      left: "21px",
+                      top: "0",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      width: "21px",
+                      height: "33.6px",
+                      background: "#928362",
+                      borderRadius: "16.8px 16.8px 0 0",
+                      transform: "rotate(45deg)",
+                      transformOrigin: "100% 100%",
+                      left: "0",
+                      top: "0",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      color: "#ffffff",
+                      fontWeight: "700",
+                      fontSize: "18.900000000000002px",
+                      zIndex: "1",
+                      padding: "2px 4px",
+                    }}
+                  >
+                    {day}
+                  </div>
+                </div>
+              </div>
+  );
+}
+
+export default function Section8({ guestType = "BOTH" }: { guestType?: GuestType }) {
+  // Calendar hearts: 18 = bride-side party, 25 = groom-side party.
+  const showHeart = (day: number) =>
+    guestType === "BOTH" || (guestType === "BRIDE" && day === 18) || (guestType === "GROOM" && day === 25);
+
   return (
     <>
       <div
@@ -822,72 +898,7 @@ export default function Section8() {
                 boxSizing: "border-box",
               }}
             >
-              <div
-                style={{
-                  width: "42px",
-                  height: "42px",
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                data-anim-preset="heartBeat"
-                data-anim-duration="1200"
-                data-anim-delay="0"
-                data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)"
-                data-anim-loop="1"
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "42px",
-                    height: "33.6px",
-                    transform: "translateY(5%)",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      width: "21px",
-                      height: "33.6px",
-                      background: "#928362",
-                      borderRadius: "16.8px 16.8px 0 0",
-                      transform: "rotate(-45deg)",
-                      transformOrigin: "0 100%",
-                      left: "21px",
-                      top: "0",
-                    }}
-                  ></div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      width: "21px",
-                      height: "33.6px",
-                      background: "#928362",
-                      borderRadius: "16.8px 16.8px 0 0",
-                      transform: "rotate(45deg)",
-                      transformOrigin: "100% 100%",
-                      left: "0",
-                      top: "0",
-                    }}
-                  ></div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      color: "#ffffff",
-                      fontWeight: "700",
-                      fontSize: "18.900000000000002px",
-                      zIndex: "1",
-                      padding: "2px 4px",
-                    }}
-                  >
-                    18
-                  </div>
-                </div>
-              </div>
+              {showHeart(18) ? <Heart day="18" /> : "18"}
             </div>
             <div
               style={{
@@ -999,72 +1010,7 @@ export default function Section8() {
                 boxSizing: "border-box",
               }}
             >
-              <div
-                style={{
-                  width: "42px",
-                  height: "42px",
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                data-anim-preset="heartBeat"
-                data-anim-duration="1200"
-                data-anim-delay="0"
-                data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)"
-                data-anim-loop="1"
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "42px",
-                    height: "33.6px",
-                    transform: "translateY(5%)",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      width: "21px",
-                      height: "33.6px",
-                      background: "#928362",
-                      borderRadius: "16.8px 16.8px 0 0",
-                      transform: "rotate(-45deg)",
-                      transformOrigin: "0 100%",
-                      left: "21px",
-                      top: "0",
-                    }}
-                  ></div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      width: "21px",
-                      height: "33.6px",
-                      background: "#928362",
-                      borderRadius: "16.8px 16.8px 0 0",
-                      transform: "rotate(45deg)",
-                      transformOrigin: "100% 100%",
-                      left: "0",
-                      top: "0",
-                    }}
-                  ></div>
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      color: "#ffffff",
-                      fontWeight: "700",
-                      fontSize: "18.900000000000002px",
-                      zIndex: "1",
-                      padding: "2px 4px",
-                    }}
-                  >
-                    25
-                  </div>
-                </div>
-              </div>
+              {showHeart(25) ? <Heart day="25" /> : "25"}
             </div>
             <div
               style={{

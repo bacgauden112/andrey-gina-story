@@ -1,7 +1,9 @@
 import React from "react";
+import type { GuestType } from "@/lib/guest-types";
 
 const PARTIES = [
   {
+    side: "BRIDE",
     title: "TIỆC NHÀ GÁI",
     event: "LỄ ĂN HỎI + LỄ VU QUY ĐƯỢC TỔ CHỨC",
     time: "11 GIỜ 00",
@@ -17,6 +19,7 @@ const PARTIES = [
     map: "https://maps.app.goo.gl/mdHRRwBDcrYHg4dWA",
   },
   {
+    side: "GROOM",
     title: "TIỆC NHÀ TRAI",
     event: "LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC",
     time: "11 GIỜ 00",
@@ -29,7 +32,7 @@ const PARTIES = [
   },
 ];
 
-export default function Section3({ guestName }: { guestName?: string }) {
+export default function Section3({ guestName, guestType = "BOTH" }: { guestName?: string; guestType?: GuestType }) {
   return (
     <section
       style={{
@@ -204,7 +207,7 @@ export default function Section3({ guestName }: { guestName?: string }) {
         </div>
 
         {/* Tiệc nhà gái (18/10) rồi tiệc nhà trai (25/10) */}
-        {PARTIES.map((p) => (
+        {PARTIES.filter((p) => guestType === "BOTH" || p.side === guestType).map((p) => (
           <div
             key={p.title}
             data-anim-preset="fadeInUp"

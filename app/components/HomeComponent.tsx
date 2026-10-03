@@ -10,9 +10,13 @@ import Section8 from './Section8';
 import Section9 from './Section9';
 import Section10 from './Section10';
 import OverlayComponent from './OverlayComponent';
-import { SHIFT_AFTER_INVITE, SHIFT_AFTER_INTRO, SHIFT_AFTER_ALBUM, CANVAS_BASE_H } from './canvasOffsets';
+import { shiftAfterInvite, canvasBaseH, SHIFT_AFTER_INTRO, SHIFT_AFTER_ALBUM } from './canvasOffsets';
+import { normalizeGuestType } from '@/lib/guest-types';
 
 export default function HomeComponent({ guest }: { guest?: any }) {
+  // Which invitation this guest gets: both ceremonies, groom side only or bride side only.
+  const guestType = normalizeGuestType(guest?.guestType);
+  const CANVAS_BASE_H = canvasBaseH(guestType);
   useEffect(() => {
 (function () {
       try {
@@ -2026,14 +2030,14 @@ export default function HomeComponent({ guest }: { guest?: any }) {
             <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: `${CANVAS_BASE_H}px` }}>
               <Section1 />
               <Section2 />
-              <Section3 guestName={guest?.name} />
-              <div style={{ transform: `translateY(${SHIFT_AFTER_INVITE - 200}px)` }}>
-                <Section7 />
-                <Section8 />
+              <Section3 guestName={guest?.name} guestType={guestType} />
+              <div style={{ transform: `translateY(${shiftAfterInvite(guestType) - 200}px)` }}>
+                <Section7 guestType={guestType} />
+                <Section8 guestType={guestType} />
                 <div style={{ transform: `translateY(${SHIFT_AFTER_INTRO}px)` }}>
                   <Section9 />
                   <div style={{ transform: `translateY(${SHIFT_AFTER_ALBUM}px)` }}>
-                    <Section10 guestName={guest?.name} guestId={guest?.id} />
+                    <Section10 guestName={guest?.name} guestId={guest?.id} guestType={guestType} />
                   </div>
                 </div>
               </div>

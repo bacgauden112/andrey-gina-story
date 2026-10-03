@@ -2,7 +2,7 @@
 import React from 'react';
 import { SHIFT_AFTER_INTRO } from './canvasOffsets';
 
-export default function Section7() {
+export default function Section7({ guestType = "BOTH" }: { guestType?: string }) {
   return (
     <>
 <div data-node-id="element_image_8re37pnogld" style={{"position":"absolute","left":"0px","top":"4069px","width":"576.89px","height":"870.27px","zIndex":"0","opacity":"1","overflow":"hidden"}}>
@@ -41,8 +41,8 @@ export default function Section7() {
 <div data-node-id="element_text_lwt1mmkogle" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInRight" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"355.82535389957263px","top":"4515.153195112181px","width":"134.36002604166666px","height":"50.208333333333336px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"30px","fontWeight":"400","fontStyle":"normal","color":"#ffffff","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","--miu-anim-distance":"200px"}}>
           11:00
         </div>
-<div data-node-id="element_text_7z7pkscogle" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInRight" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"352.4572482638889px","top":"4555.370309161326px","width":"215px","height":"26px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"20px","fontWeight":"400","fontStyle":"normal","color":"#ffffff","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","--miu-anim-distance":"200px"}}>
-          LỄ THÀNH HÔN
+<div data-node-id="element_text_7z7pkscogle" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInRight" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"352.4572482638889px","top":"4555.370309161326px","width":"215px","height":"26px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":guestType === "BRIDE" ? "16px" : "20px","fontWeight":"400","fontStyle":"normal","color":"#ffffff","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","--miu-anim-distance":"200px"}}>
+          {guestType === "BRIDE" ? "LỄ ĂN HỎI + LỄ VU QUY" : "LỄ THÀNH HÔN"}
         </div>
 <div data-node-id="element_text_7z7pkscogled" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInRight" data-anim-duration="2000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"352.4572482638889px","top":"4585.370309161326px","width":"215px","height":"40px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","color":"#ffffff","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","--miu-anim-distance":"200px"}}>
           Nghi thức cưới và trao nhẫn

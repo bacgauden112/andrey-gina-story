@@ -9,6 +9,9 @@ datasource db {
 
 model Guest {
   id           String   @id @default(cuid())
+  code         String?  @unique // mã trong link riêng: wedding-0001
+  guestType    String   @default("BOTH") // BOTH, GROOM (chỉ nhà trai), BRIDE (chỉ nhà gái)
+  invitePrefix String   @default("Thân mời") // Thân mời / Kính mời / ... (hiện ở tiêu đề khi chia sẻ link)
   name         String
   status       String   @default("CHUA_XAC_NHAN") // CHUA_XAC_NHAN, THAM_GIA, KHONG_THAM_GIA
   guestCount   Int      @default(1)

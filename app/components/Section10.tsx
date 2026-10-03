@@ -14,7 +14,7 @@ type Wish = {
   createdAt: string;
 };
 
-export default function Section10({ guestName, guestId }: { guestName?: string, guestId?: string }) {
+export default function Section10({ guestName, guestId, guestType = 'BOTH' }: { guestName?: string, guestId?: string, guestType?: string }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -99,7 +99,10 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
     window.dispatchEvent(new Event('resize'));
   }, [extra]);
 
-  const showBride = attend === 'yes' && bride;
+  // Single-side guests are only invited to one party, so the choice is fixed (and not asked).
+  const effBride = guestType === 'BRIDE' ? true : guestType === 'GROOM' ? false : bride;
+  const effGroom = guestType === 'GROOM' ? true : guestType === 'BRIDE' ? false : groom;
+  const showBride = attend === 'yes' && effBride;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -107,7 +110,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
       alert('Vui lòng truy cập bằng link dành riêng cho bạn để gửi RSVP.');
       return;
     }
-    if (attend === 'yes' && !bride && !groom) {
+    if (attend === 'yes' && !effBride && !effGroom) {
       setRsvpError('Vui lòng chọn ít nhất một bữa tiệc bạn sẽ tham dự.');
       return;
     }
@@ -130,8 +133,8 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
         body: JSON.stringify({
           status: attending ? 'THAM_GIA' : 'KHONG_THAM_GIA',
           guestCount: attending ? guests : 1,
-          attendBride: attending && bride,
-          attendGroom: attending && groom,
+          attendBride: attending && effBride,
+          attendGroom: attending && effGroom,
           needShuttle,
           shuttleCount: needShuttle ? Math.min(guests, Math.max(1, Number(shuttleTotal) || 1)) : 0,
           message,
@@ -186,6 +189,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
 
                   {attend === 'yes' && (
                     <>
+                      {guestType === 'BOTH' && (
                       <div>
                         <div style={QUESTION}>BẠN SẼ THAM DỰ TIỆC NÀO?</div>
                         <div className="miu-rsvp-radio">
@@ -196,6 +200,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
                         </div>
                         <div style={{ ...HINT, marginTop: '8px' }}>Có thể chọn cả hai.</div>
                       </div>
+                      )}
 
                       <label className="miu-rsvp-label">
                         <div style={QUESTION}>SỐ NGƯỜI THAM DỰ</div>

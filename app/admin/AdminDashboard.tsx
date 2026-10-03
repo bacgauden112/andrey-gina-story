@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { logout } from "./auth-actions";
+import { GUEST_TYPES, INVITE_PREFIXES, DEFAULT_INVITE_PREFIX, type GuestType } from "@/lib/guest-types";
 
 type Guest = {
   id: string;
+  code?: string | null;
+  guestType?: GuestType;
+  invitePrefix?: string;
   name: string;
   status: string;
   guestCount: number;
@@ -22,11 +26,34 @@ type Wish = {
   createdAt: string;
 };
 
+const CUSTOM = "__custom__";
+
+// Preset forms of address (Thân mời / Kính mời / ...) plus any custom text, e.g. "Trân trọng kính mời".
+function PrefixSelect({ value, onChange, className }: { value: string; onChange: (v: string) => void; className?: string }) {
+  const options = INVITE_PREFIXES.includes(value) ? INVITE_PREFIXES : [...INVITE_PREFIXES, value];
+  return (
+    <select
+      value={value}
+      className={className}
+      onChange={(e) => {
+        if (e.target.value !== CUSTOM) return onChange(e.target.value);
+        const custom = prompt("Nhập cách xưng hô khi mời (ví dụ: Kính gửi, Trân trọng kính mời):", value)?.trim();
+        if (custom) onChange(custom);
+      }}
+    >
+      {options.map((o) => <option key={o} value={o}>{o}</option>)}
+      <option value={CUSTOM}>Khác…</option>
+    </select>
+  );
+}
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<"guests" | "wishes">("guests");
   
   const [guests, setGuests] = useState<Guest[]>([]);
   const [newName, setNewName] = useState("");
+  const [newType, setNewType] = useState<GuestType>("BOTH");
+  const [newPrefix, setNewPrefix] = useState(DEFAULT_INVITE_PREFIX);
   const [loadingGuests, setLoadingGuests] = useState(true);
 
   const [wishes, setWishes] = useState<Wish[]>([]);
@@ -64,12 +91,42 @@ export default function AdminDashboard() {
     const res = await fetch("/api/guests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: newName }),
+      body: JSON.stringify({ name: newName, guestType: newType, invitePrefix: newPrefix }),
     });
     if (res.ok) {
       setNewName("");
       fetchGuests();
     }
+  };
+
+  const handleChangePrefix = async (g: Guest, invitePrefix: string) => {
+    const res = await fetch(`/api/guests/${g.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ invitePrefix }),
+    });
+    if (!res.ok) alert("Không đổi được cách xưng hô, vui lòng thử lại.");
+    fetchGuests();
+  };
+
+  const handleChangeType = async (g: Guest, guestType: GuestType) => {
+    const send = (resetRsvp: boolean) =>
+      fetch(`/api/guests/${g.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ guestType, resetRsvp }),
+      });
+    let res = await send(false);
+    if (res.status === 409) {
+      const label = GUEST_TYPES.find((t) => t.value === guestType)?.label;
+      if (!confirm(`${g.name} đã trả lời RSVP. Đổi sang "${label}" sẽ đặt lại câu trả lời RSVP của khách này (trạng thái, tiệc đã chọn, xe đưa đón, số người; lời nhắn được giữ lại). Tiếp tục?`)) {
+        fetchGuests();
+        return;
+      }
+      res = await send(true);
+    }
+    if (!res.ok) alert("Không đổi được loại khách, vui lòng thử lại.");
+    fetchGuests();
   };
 
   const handleDeleteGuest = async (id: string) => {
@@ -89,8 +146,8 @@ export default function AdminDashboard() {
     window.location.reload();
   };
 
-  const copyLink = (id: string) => {
-    const url = `${window.location.origin}/?id=${id}`;
+  const copyLink = (g: Guest) => {
+    const url = `${window.location.origin}/?id=${g.code || g.id}`;
     navigator.clipboard.writeText(url);
     alert("Đã copy link: " + url);
   };
@@ -142,6 +199,14 @@ export default function AdminDashboard() {
                 onChange={(e) => setNewName(e.target.value)}
                 className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
+              <PrefixSelect value={newPrefix} onChange={setNewPrefix} className="px-3 py-2 border rounded-lg bg-white" />
+              <select
+                value={newType}
+                onChange={(e) => setNewType(e.target.value as GuestType)}
+                className="px-3 py-2 border rounded-lg bg-white"
+              >
+                {GUEST_TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
+              </select>
               <button type="submit" className="bg-pink-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-pink-600">Thêm</button>
             </form>
           </div>
@@ -150,7 +215,10 @@ export default function AdminDashboard() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-gray-100 text-gray-600 text-sm uppercase">
+                  <th className="py-3 px-4">Mã</th>
                   <th className="py-3 px-4">Tên khách</th>
+                  <th className="py-3 px-4">Xưng hô</th>
+                  <th className="py-3 px-4">Loại thiệp</th>
                   <th className="py-3 px-4">Trạng thái RSVP</th>
                   <th className="py-3 px-4">Số người</th>
                   <th className="py-3 px-4">Tiệc</th>
@@ -161,13 +229,30 @@ export default function AdminDashboard() {
               </thead>
               <tbody>
                 {loadingGuests ? (
-                  <tr><td colSpan={7} className="text-center py-8">Đang tải...</td></tr>
+                  <tr><td colSpan={10} className="text-center py-8">Đang tải...</td></tr>
                 ) : guests.length === 0 ? (
-                  <tr><td colSpan={7} className="text-center py-8 text-gray-500">Chưa có khách mời nào</td></tr>
+                  <tr><td colSpan={10} className="text-center py-8 text-gray-500">Chưa có khách mời nào</td></tr>
                 ) : (
                   guests.map((g) => (
                     <tr key={g.id} className="border-b hover:bg-gray-50">
+                      <td className="py-3 px-4 text-sm font-mono text-gray-500">{g.code || "-"}</td>
                       <td className="py-3 px-4 font-medium">{g.name}</td>
+                      <td className="py-3 px-4">
+                        <PrefixSelect
+                          value={g.invitePrefix || DEFAULT_INVITE_PREFIX}
+                          onChange={(v) => handleChangePrefix(g, v)}
+                          className="px-2 py-1 border rounded bg-white text-sm"
+                        />
+                      </td>
+                      <td className="py-3 px-4">
+                        <select
+                          value={g.guestType || "BOTH"}
+                          onChange={(e) => handleChangeType(g, e.target.value as GuestType)}
+                          className="px-2 py-1 border rounded bg-white text-sm"
+                        >
+                          {GUEST_TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
+                        </select>
+                      </td>
                       <td className="py-3 px-4">
                         {g.status === "THAM_GIA" && <span className="text-green-600 font-medium">Tham gia</span>}
                         {g.status === "KHONG_THAM_GIA" && <span className="text-red-600 font-medium">Không tham gia</span>}
@@ -180,7 +265,7 @@ export default function AdminDashboard() {
                       <td className="py-3 px-4 text-sm">{g.needShuttle ? `Cần xe (${g.shuttleCount} người)` : "-"}</td>
                       <td className="py-3 px-4 text-sm max-w-xs whitespace-pre-wrap">{g.message || "-"}</td>
                       <td className="py-3 px-4 flex justify-end gap-2">
-                        <button onClick={() => copyLink(g.id)} className="text-blue-500 hover:underline text-sm">Copy Link</button>
+                        <button onClick={() => copyLink(g)} className="text-blue-500 hover:underline text-sm">Copy Link</button>
                         <button onClick={() => handleDeleteGuest(g.id)} className="text-red-500 hover:underline text-sm ml-4">Xóa</button>
                       </td>
                     </tr>
