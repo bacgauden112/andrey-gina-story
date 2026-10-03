@@ -29,16 +29,16 @@ export default function Section2() {
           <img src="./assets/uh312kj3n12k3j12kj3.png" alt="" style={{"width":"100%","height":"100%","objectFit":"contain","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
         </div>
       </div>
-      <div data-node-id="element_text_b95pg5k9teq_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"94.88px","top":"1080px","width":"380px","height":"59px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"45px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
+      <div data-node-id="element_text_b95pg5k9teq_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"94.88px","top":"1132px","width":"380px","height":"66px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"52px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
         Quang Anh
       </div>
-      <div data-node-id="element_text_r3vmh0ob9ih_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"94.88px","top":"1160px","width":"380px","height":"59px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"45px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
+      <div data-node-id="element_text_r3vmh0ob9ih_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"94.88px","top":"1222px","width":"380px","height":"66px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"52px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
         Ninh Giang
       </div>
-      <div data-node-id="element_text_yj339vtcml4_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"146.852px","top":"1120px","width":"276.39px","height":"59px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"45px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
+      <div data-node-id="element_text_yj339vtcml4_visible" data-node-type="element_text" data-manual-sized="1" style={{"position":"absolute","left":"146.852px","top":"1176px","width":"276.39px","height":"66px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"High Spirited\", cursive","fontSize":"52px","fontWeight":"400","fontStyle":"normal","color":"rgb(161, 137, 85)","whiteSpace":"pre-wrap","padding":"0px"}}>
         &amp;
       </div>
-      <div data-node-id="element_text_ukp4vzud5b3" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="50" style={{"position":"absolute","left":"160.752px","top":"1043.3px","width":"248.334px","height":"39px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"50px"}}>
+      <div data-node-id="element_text_ukp4vzud5b3" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="50" style={{"position":"absolute","left":"144.9px","top":"1092px","width":"280px","height":"44px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"17px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"rgb(146, 131, 98)","whiteSpace":"pre-wrap","padding":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp","--miu-anim-distance":"50px"}}>
         YOU’RE INVITED TO THE WEDDING OF
       </div>
       <div data-node-id="element_image_4grau3nk634" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"395.019px","top":"992.693px","width":"81.6404px","height":"87.171px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","overflow":"hidden","borderRadius":"0px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeIn"}}>
@@ -47,21 +47,6 @@ export default function Section2() {
         </div>
       </div>
 
-      <div style={{"position":"absolute","left":"110px","top":"1220px","width":"350px","zIndex":"0","display":"flex","flexDirection":"column","alignItems":"center","gap":"10px"}}>
-        <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","fontWeight":"400","textTransform":"uppercase","color":"rgb(161, 137, 85)","marginTop":"5px"}}>
-          IS HAPPENING IN
-        </div>
-        <div data-countdown="1" data-target="2026-10-25T00:00:00.000Z" data-sep=" : " data-show-d="1" data-show-h="1" data-show-m="1" data-show-s="1" data-suf-d="" data-suf-h="" data-suf-m="" data-suf-s="" style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"32px","fontWeight":"400","color":"rgb(161, 137, 85)","letterSpacing":"3px"}}>
-          101 : 22 : 10 : 55
-        </div>
-        <div style={{"display":"flex","width":"90%","justifyContent":"space-between","fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"16px","fontWeight":"400","color":"rgb(161, 137, 85)"}}>
-          <span>Ngày</span>
-          <span>Giờ</span>
-          <span>Phút</span>
-          <span>Giây</span>
-        </div>
-        
-      </div>
 
       <div data-node-id="element_shape_c067ncjqx71" data-anim-preset="rotateInDownRight" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"416.257px","top":"1065.4px","width":"103.675px","height":"140px","zIndex":"0","boxShadow":"rgba(0, 0, 0, 0.15) 0px 10px 30px","--miu-node-rotate":"10.223401008290473deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-rotateInDownRight"}}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100%" style={{"display":"block","overflow":"visible"}}>

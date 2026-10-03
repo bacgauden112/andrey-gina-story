@@ -11,24 +11,11 @@ export default function Section1() {
           </div>
         </div>
 <div data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"0px","top":"620px","width":"100%","display":"flex","flexDirection":"column","alignItems":"center","gap":"20px","zIndex":"10","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInUp"}}>
-          <div style={{"display":"flex","flexDirection":"row","alignItems":"center","justifyContent":"center","gap":"15px"}}>
-            <div style={{"fontFamily":"\"UVN Hoa Tay\", cursive","fontSize":"55px","color":"rgb(255, 255, 255)"}}>
-              Quang Anh
-            </div>
-            <div style={{"fontFamily":"\"High Spirited\", cursive","fontSize":"60px","color":"rgb(255, 255, 255)"}}>
-              &amp;
-            </div>
-            <div style={{"fontFamily":"\"UVN Hoa Tay\", cursive","fontSize":"55px","color":"rgb(255, 255, 255)"}}>
-              Ninh Giang
-            </div>
+          <div style={{"fontFamily":"\"Arcittya-Begatri\", \"High Spirited\", cursive","fontSize":"70px","lineHeight":"1.1","color":"rgb(255, 255, 255)","textShadow":"0 1px 10px rgba(0,0,0,0.4)","textAlign":"center","whiteSpace":"nowrap"}}>
+            Save the Date
           </div>
-          <div style={{"display":"flex","flexDirection":"column","alignItems":"center","gap":"5px","marginTop":"20px"}}>
-            <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"18px","color":"rgb(255, 255, 255)","textTransform":"uppercase"}}>
-              SAVE THE DATE
-            </div>
-            <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"30px","color":"rgb(255, 255, 255)"}}>
-              25.10.2026
-            </div>
+          <div style={{"fontFamily":"Lora, Georgia, \"Times New Roman\", serif","fontSize":"15px","lineHeight":"1.9","letterSpacing":"0.3em","color":"rgb(255, 255, 255)","textShadow":"0 1px 8px rgba(0,0,0,0.5)","textTransform":"uppercase","textAlign":"center","marginTop":"-4px"}}>
+            For the wedding of<br />Quang Anh &amp; Ninh Giang
           </div>
         </div>
 <div data-node-id="element_text_pzmveooy408" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInLeft" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"-20px","top":"635px","width":"300px","height":"78px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"right","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"55px","fontWeight":"400","fontStyle":"normal","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeInLeft","--miu-anim-distance":"200px"}}>

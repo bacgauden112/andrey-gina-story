@@ -8,7 +8,7 @@ export default function Section9() {
 <div data-node-id="element_text_0cyc8cn2om8" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"160.671875px","top":"6215.582465277777px","width":"248.39241387373858px","height":"91px","zIndex":"0","opacity":"0","--miu-node-rotate":"-0.011346815692377277deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"'UVN Hoa Tay', 'Brush Script MT', cursive","fontSize":"70px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           October
         </div>
-<div data-node-id="element_shape_5gaeh213iud" style={{"position":"absolute","left":"-5.809461805555559px","top":"6652.100477430556px","width":"588.1095920138888px","height":"984px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))"}}>
+<div data-node-id="element_shape_5gaeh213iud" style={{"position":"absolute","left":"-5.809461805555559px","top":"6652.100477430556px","width":"588.1095920138888px","height":"1721px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))"}}>
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100%" style={{"display":"block","overflow":"visible"}}>
             <rect x="0" y="0" width="100" height="100" rx="0" ry="0" fill="#a29578" stroke="none" strokeWidth="0"></rect>
           </svg>
@@ -33,6 +33,16 @@ export default function Section9() {
 <div data-node-id="element_image_album_collage_2" data-anim-preset="flipInX" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"36.88671875000001px","top":"7242.7px","width":"500.40125868055554px","height":"350.3px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
             <img src="./assets/album-collage-2.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_album_collage_3" data-anim-preset="flipInX" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"36.88671875000001px","top":"7611.0px","width":"500.40125868055554px","height":"350.3px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/album-collage-3.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+          </div>
+        </div>
+<div data-node-id="element_image_album_collage_4" data-anim-preset="flipInX" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"36.88671875000001px","top":"7979.3px","width":"500.40125868055554px","height":"350.3px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
+          <div style={{"position":"relative","width":"100%","height":"100%"}}>
+            <img src="./assets/album-collage-4.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
 <div style={{ transform: `translateY(${SHIFT_AFTER_ALBUM}px)` }}>
