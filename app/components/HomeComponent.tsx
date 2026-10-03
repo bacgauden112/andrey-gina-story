@@ -2028,7 +2028,7 @@ export default function HomeComponent({ guest }: { guest?: any }) {
         <div className="miu-stage" style={{ "--sh": `${CANVAS_BASE_H}px` }}>
           <div className="miu-canvas-wrap">
             <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: `${CANVAS_BASE_H}px` }}>
-              <Section1 />
+              <Section1 guestType={guestType} />
               <Section2 />
               <Section3 guestName={guest?.name} guestType={guestType} />
               <div style={{ transform: `translateY(${shiftAfterInvite(guestType) - 200}px)` }}>

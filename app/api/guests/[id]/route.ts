@@ -11,7 +11,15 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
     // Status can be updated by RSVP form
     // Name, guestCount can be updated by Admin
     const updateData: any = {};
-    if (body.name !== undefined) updateData.name = body.name;
+    if (body.name !== undefined) {
+      // Renaming a guest is an admin action.
+      const name = typeof body.name === "string" ? body.name.replace(/\s+/g, " ").trim().slice(0, 100) : "";
+      if ((await cookies()).get("admin_auth")?.value !== "true") {
+        return NextResponse.json({ error: "Not allowed" }, { status: 403 });
+      }
+      if (!name) return NextResponse.json({ error: "Name is required" }, { status: 400 });
+      updateData.name = name;
+    }
     if (body.status !== undefined) updateData.status = body.status;
     if (body.guestCount !== undefined) updateData.guestCount = body.guestCount;
     if (body.attendBride !== undefined) updateData.attendBride = Boolean(body.attendBride);
