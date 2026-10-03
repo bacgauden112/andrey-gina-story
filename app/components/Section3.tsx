@@ -1,5 +1,28 @@
 import React from 'react';
 
+const PARTIES = [
+  {
+    title: 'TIỆC NHÀ GÁI',
+    event: 'LỄ ĂN HỎI + LỄ VU QUY ĐƯỢC TỔ CHỨC',
+    time: '11 GIỜ 00',
+    day: '18',
+    lunar: '(Tức ngày 09 tháng 09 năm Bính Ngọ)',
+    venue: 'PANDORA CENTER',
+    address: <>Sảnh tiệc Athena 1 - Tầng 5<br />12 Võ Nguyên Giáp, An Biên, Hải Phòng</>,
+    map: 'https://maps.app.goo.gl/mdHRRwBDcrYHg4dWA',
+  },
+  {
+    title: 'TIỆC NHÀ TRAI',
+    event: 'LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC',
+    time: '11 GIỜ 00',
+    day: '25',
+    lunar: '(Tức ngày 16 tháng 09 năm Bính Ngọ)',
+    venue: 'Nguyên Đình',
+    address: 'Tầng 4 - TTTM TRƯƠNG ĐỊNH PLAZA, 461 Trương Định, Phường Tương Mai, TP. Hà Nội',
+    map: 'https://maps.app.goo.gl/RgNM4QepabMrQXEN9',
+  },
+];
+
 export default function Section3({ guestName }: { guestName?: string }) {
   return (
     <section style={{ position: 'absolute', top: '2102px', left: 0, width: '100%', overflow: 'hidden' }}>
@@ -49,68 +72,38 @@ export default function Section3({ guestName }: { guestName?: string }) {
           <div>Ninh Giang</div>
         </div>
 
-        {/* Lễ Thành Hôn */}
-        <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', width: '100%' }}>
-          <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>LỄ THÀNH HÔN ĐƯỢC TỔ CHỨC<br/>VÀO LÚC 08 GIỜ 00</div>
-          
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
-              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>THÁNG 10</div>
+        {/* Tiệc nhà gái (18/10) rồi tiệc nhà trai (25/10) */}
+        {PARTIES.map((p) => (
+          <div key={p.title} data-anim-preset="fadeInUp" style={{ width: '100%', maxWidth: '520px', boxSizing: 'border-box', border: '1px solid rgba(146, 131, 98, 0.6)', borderRadius: '18px', background: 'rgba(255, 255, 255, 0.35)', padding: '28px 12px 32px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+            <div style={{ fontSize: '32px', fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', lineHeight: 1.2, paddingBottom: '10px', marginBottom: '6px', borderBottom: '2px solid #928362' }}>{p.title}</div>
+            <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>{p.event}<br />VÀO LÚC {p.time}</div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+                <div style={{ fontSize: '25px', fontWeight: 'bold' }}>THÁNG 10</div>
+              </div>
+              <div style={{ fontSize: '50px', fontWeight: '200' }}>{p.day}</div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
+                <div style={{ fontSize: '25px', fontWeight: 'bold' }}>NĂM 2026</div>
+              </div>
             </div>
-            <div style={{ fontSize: '50px', fontWeight: '200' }}>25</div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
-              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>NĂM 2026</div>
-            </div>
+
+            <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>{p.lunar}</div>
+            <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
+            <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br />{p.venue}</div>
+            <div style={{ fontSize: '21px', fontStyle: 'italic' }}>{p.address}</div>
+
+            <a href={p.map} target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
+              <svg width="31" height="31" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
+                <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="currentColor"></path>
+              </svg>
+              Chỉ đường
+            </a>
           </div>
-
-          <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>(Tức ngày 16 tháng 09 năm Bính Ngọ)</div>
-          <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
-          <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br/>Nguyên Đình</div>
-          <div style={{ fontSize: '21px', fontStyle: 'italic' }}>Tầng 4 - TTTM TRƯƠNG ĐỊNH PLAZA, 461 Trương Định, Phường Tương Mai, TP. Hà Nội</div>
-          
-          <a href="https://maps.app.goo.gl/RgNM4QepabMrQXEN9" target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
-            <svg width="31" height="31" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
-              <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="currentColor"></path>
-            </svg>
-            Chỉ đường
-          </a>
-        </div>
-
-        {/* Separator */}
-        <div style={{ fontSize: '20px', letterSpacing: '-2px', margin: '20px 0' }}>----------------------------------------------------------</div>
-
-        {/* Lễ Ăn Hỏi */}
-        <div data-anim-preset="fadeInUp" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', width: '100%' }}>
-          <div style={{ fontSize: '21px', textTransform: 'uppercase' }}>LỄ ĂN HỎI ĐƯỢC TỔ CHỨC<br/>VÀO LÚC 11 GIỜ 00</div>
-          
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
-              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>THÁNG 10</div>
-            </div>
-            <div style={{ fontSize: '50px', fontWeight: '200' }}>18</div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '20px', letterSpacing: '-2px' }}>____________</div>
-              <div style={{ fontSize: '25px', fontWeight: 'bold' }}>NĂM 2026</div>
-            </div>
-          </div>
-
-          <div style={{ fontSize: '21px', fontStyle: 'italic', marginTop: '10px' }}>(Tức ngày 09 tháng 09 năm Bính Ngọ)</div>
-          <div style={{ fontSize: '21px' }}>Tại địa điểm</div>
-          <div style={{ fontSize: '25px', fontWeight: 'bold', textTransform: 'uppercase' }}>Trung tâm tổ chức sự kiện tiệc cưới<br/>PANDORA CENTER</div>
-          <div style={{ fontSize: '21px', fontStyle: 'italic' }}>Sảnh tiệc Athena 1 - Tầng 5<br/>12 Võ Nguyên Giáp, An Biên, Hải Phòng</div>
-          
-          <a href="https://maps.app.goo.gl/mdHRRwBDcrYHg4dWA" target="_blank" style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '25px', fontWeight: 'bold', textDecoration: 'none', color: '#928362' }}>
-            <svg width="31" height="31" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
-              <path d="M12 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="currentColor"></path>
-            </svg>
-            Chỉ đường
-          </a>
-        </div>
+        ))}
       </div>
     </section>
   );

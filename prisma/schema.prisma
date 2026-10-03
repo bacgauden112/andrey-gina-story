@@ -8,12 +8,17 @@ datasource db {
 }
 
 model Guest {
-  id          String   @id @default(cuid())
-  name        String
-  status      String   @default("CHUA_XAC_NHAN") // CHUA_XAC_NHAN, THAM_GIA, KHONG_THAM_GIA
-  guestCount  Int      @default(1)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           String   @id @default(cuid())
+  name         String
+  status       String   @default("CHUA_XAC_NHAN") // CHUA_XAC_NHAN, THAM_GIA, KHONG_THAM_GIA
+  guestCount   Int      @default(1)
+  attendBride  Boolean  @default(false) // tham dự tiệc nhà gái (Hải Phòng, 18.10)
+  attendGroom  Boolean  @default(false) // tham dự tiệc nhà trai (Hà Nội, 25.10)
+  needShuttle  Boolean  @default(false) // cần xe đưa đón đến tiệc nhà gái
+  shuttleCount Int      @default(0)
+  message      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Wish {

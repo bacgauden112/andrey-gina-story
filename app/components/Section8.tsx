@@ -1,5 +1,21 @@
 // @ts-nocheck
 import React from 'react';
+import { SHIFT_AFTER_INTRO } from './canvasOffsets';
+
+const PROFILES = [
+  {
+    role: 'The Groom',
+    name: 'Quang Anh',
+    meta: '1994 · Hà Nội · IT',
+    about: 'Anh ít nói, điềm tĩnh, quen với logic và có phần lạnh lùng trong mắt những người mới gặp. Nhưng ở cạnh Giang, anh lại là một phiên bản rất khác - hay cười, ngọt ngào và luôn chăm sóc vợ từ những điều nhỏ nhất.',
+  },
+  {
+    role: 'The Bride',
+    name: 'Ninh Giang',
+    meta: '1998 · Hải Phòng · Marketing',
+    about: 'Giang vui vẻ, nhiều cảm xúc, yêu hoa, yêu bầu trời và vẫn thường rung động trước những điều rất nhỏ. Một chút bay bổng, một chút mộng mơ, và luôn muốn cuộc sống của mình có thật nhiều điều xinh đẹp.',
+  },
+];
 
 export default function Section8() {
   return (
@@ -9,11 +25,8 @@ export default function Section8() {
             <img src="./assets/nbnmdasjdh12lk3m12l3km.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
-<div data-node-id="element_text_pdg71o4ck7y" data-node-type="element_text" data-manual-sized="1" data-anim-preset="pop" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"103.71571180555551px","top":"5020.740885416666px","width":"195.78645833333337px","height":"104px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"right","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"80px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          H
-        </div>
-<div data-node-id="element_text_f0zucnzd6hw" data-node-type="element_text" data-manual-sized="1" data-anim-preset="pop" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"232.13498263888894px","top":"5052.589192708333px","width":"207.75564236111111px","height":"91px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"Flavinda, 'Brush Script MT', cursive","fontSize":"70px","fontWeight":"400","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
-          N
+<div data-node-id="element_image_monogram_ag" data-anim-preset="pop" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"232px","top":"5006px","width":"111px","height":"146px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))"}}>
+          <img src="./assets/monogram-ag.png" alt="A&G" style={{"width":"100%","height":"100%","objectFit":"contain","display":"block"}} />
         </div>
 <div data-node-id="element_text_gk7yvcrhsdn" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"22.587239583333336px","top":"5188.939670138889px","width":"530.1848958333334px","height":"164px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"18px","fontWeight":"200","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           Tình yêu của anh và em là một hành trình kỳ diệu, vượt qua bao thử
@@ -54,6 +67,22 @@ export default function Section8() {
 <div data-node-id="element_text_eaj5s4wx79u" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInDown" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"323.4700520833333px","top":"5502.051742915701px","width":"218.0963541666667px","height":"33px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"left","fontFamily":"'Playfair Display', Georgia, 'Times New Roman', serif","fontSize":"25px","fontWeight":"400","fontStyle":"normal","textTransform":"uppercase","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           QUANG ANH
         </div>
+<div data-node-id="element_text_couple_profiles" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"22.5px","top":"5985px","width":"530px","zIndex":"0","opacity":"0","display":"flex","flexDirection":"column","alignItems":"center","gap":"22px","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"18px","fontWeight":"200","lineHeight":"1.5","textWrap":"balance","color":"#928362"}}>
+          <div>
+            Hai đứa là hai mảnh tính cách khá khác nhau.<br />Một người điềm tĩnh và lý trí. Một người nhiều cảm xúc và đôi chút mộng mơ.<br />Có lẽ cũng vì thế mà thế giới của người này luôn có điều gì đó thú vị trong mắt người kia.
+          </div>
+          {PROFILES.map((p) => (
+            <div key={p.name} style={{"display":"flex","flexDirection":"column","alignItems":"center","gap":"6px"}}>
+              <div style={{"fontFamily":"'High Spirited', 'Brush Script MT', cursive","fontSize":"44px","fontWeight":"400","lineHeight":"1.3","color":"#928362"}}>{p.role} · {p.name}</div>
+              <div style={{"fontWeight":"600"}}>{p.meta}</div>
+              <div>{p.about}</div>
+            </div>
+          ))}
+          <div>
+            Từ khi có Giang, thế giới của Anh dường như nhiều tiếng cười hơn.<br />Từ khi có Anh, Giang lại thấy mình chậm hơn một chút, tận hưởng nhiều hơn những khoảnh khắc đang có.
+          </div>
+        </div>
+<div style={{ transform: `translateY(${SHIFT_AFTER_INTRO}px)` }}>
 <div data-node-id="element_text_j3tjlcizilk" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeInUp" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"22.533637152777775px","top":"5990.872395833333px","width":"530.1848958333334px","height":"70px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate,0deg))","display":"block","textAlign":"center","fontFamily":"Lora, Georgia, 'Times New Roman', serif","fontSize":"18px","fontWeight":"200","fontStyle":"normal","color":"#928362","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px"}}>
           Hôm nay là ngày chúng mình cùng nắm tay<br />bước vào hành trình mới
           <br />hành trình của yêu thương và sẻ chia.
@@ -129,7 +158,15 @@ export default function Section8() {
               17
             </div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
-              18
+<div style={{"width":"42px","height":"42px","position":"relative","display":"flex","alignItems":"center","justifyContent":"center"}} data-anim-preset="heartBeat" data-anim-duration="1200" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="1">
+                <div style={{"position":"relative","width":"42px","height":"33.6px","transform":"translateY(5%)"}}>
+                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(-45deg)","transformOrigin":"0 100%","left":"21px","top":"0"}}></div>
+                  <div style={{"position":"absolute","width":"21px","height":"33.6px","background":"#928362","borderRadius":"16.8px 16.8px 0 0","transform":"rotate(45deg)","transformOrigin":"100% 100%","left":"0","top":"0"}}></div>
+                  <div style={{"position":"absolute","top":"50%","left":"50%","transform":"translate(-50%, -50%)","color":"#ffffff","fontWeight":"700","fontSize":"18.900000000000002px","zIndex":"1","padding":"2px 4px"}}>
+                    18
+                  </div>
+                </div>
+              </div>
             </div>
             <div style={{"height":"44px","display":"flex","alignItems":"center","justifyContent":"center","borderRadius":"10px","background":"transparent","color":"#928362","opacity":"1","border":"1px solid transparent","boxSizing":"border-box"}}>
               19
@@ -182,6 +219,7 @@ export default function Section8() {
           </div>
         </div>
 
+</div>
     </>
   );
 }

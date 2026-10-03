@@ -10,6 +10,7 @@ import Section8 from './Section8';
 import Section9 from './Section9';
 import Section10 from './Section10';
 import OverlayComponent from './OverlayComponent';
+import { SHIFT_AFTER_INVITE, SHIFT_AFTER_INTRO, SHIFT_AFTER_ALBUM, CANVAS_BASE_H } from './canvasOffsets';
 
 export default function HomeComponent({ guest }: { guest?: any }) {
   useEffect(() => {
@@ -543,7 +544,8 @@ export default function HomeComponent({ guest }: { guest?: any }) {
 
             // Auto expand height when some nodes (e.g. RSVP) render taller than configured h
             try {
-              var baseH = 10881;
+              var baseH = CANVAS_BASE_H;
+              canvas.style.height = String(baseH) + 'px'; // reset so the height can shrink again
               var sh = Number(canvas.scrollHeight || 0);
               var nextH = Math.max(baseH, sh || 0);
               if (nextH && isFinite(nextH)) {
@@ -2019,17 +2021,21 @@ export default function HomeComponent({ guest }: { guest?: any }) {
   return (
     <>
       <div className="miu-wrap">
-        <div className="miu-stage" style={{ "--sh": "10681px" }}>
+        <div className="miu-stage" style={{ "--sh": `${CANVAS_BASE_H}px` }}>
           <div className="miu-canvas-wrap">
-            <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: "10681px" }}>
+            <div className="miu-canvas" data-invitation-id="6a0e698fd81ce3f11abeeaaf" style={{ height: `${CANVAS_BASE_H}px` }}>
               <Section1 />
               <Section2 />
               <Section3 guestName={guest?.name} />
-              <div style={{ transform: 'translateY(-200px)' }}>
+              <div style={{ transform: `translateY(${SHIFT_AFTER_INVITE - 200}px)` }}>
                 <Section7 />
                 <Section8 />
-                <Section9 />
-                <Section10 guestName={guest?.name} guestId={guest?.id} />
+                <div style={{ transform: `translateY(${SHIFT_AFTER_INTRO}px)` }}>
+                  <Section9 />
+                  <div style={{ transform: `translateY(${SHIFT_AFTER_ALBUM}px)` }}>
+                    <Section10 guestName={guest?.name} guestId={guest?.id} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

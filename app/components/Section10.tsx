@@ -1,5 +1,11 @@
 // @ts-nocheck
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+// Height of the RSVP block in its initial (nothing answered yet) state; everything below is laid out for it.
+const RSVP_BASE_H = 654;
+
+const QUESTION = { fontSize: '20px', fontWeight: 700, letterSpacing: '0.5px', marginBottom: '8px' };
+const HINT = { fontSize: '17px', fontStyle: 'italic', opacity: 0.85, marginBottom: '8px' };
 
 type Wish = {
   id: string;
@@ -64,78 +70,181 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
     setSubmittingWish(false);
   };
 
+  const [attend, setAttend] = useState('');
+  const [bride, setBride] = useState(false);
+  const [groom, setGroom] = useState(false);
+  const [shuttle, setShuttle] = useState('');
+  const [guestTotal, setGuestTotal] = useState(1);
+  const [shuttleTotal, setShuttleTotal] = useState(1);
+  const [rsvpError, setRsvpError] = useState('');
+  const [extra, setExtra] = useState(0);
+  const rsvpRef = useRef<HTMLElement>(null);
+
+  // The RSVP form grows/shrinks with the answers; push everything below it by the difference.
+  useEffect(() => {
+    const el = rsvpRef.current;
+    if (!el) return;
+    const measure = () => {
+      const next = Math.round(el.offsetHeight - RSVP_BASE_H);
+      setExtra((prev) => (prev === next ? prev : next));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  // Let the canvas re-measure its own height (see sync() in HomeComponent).
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, [extra]);
+
+  const showBride = attend === 'yes' && bride;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!guestId) {
       alert('Vui lòng truy cập bằng link dành riêng cho bạn để gửi RSVP.');
       return;
     }
-    
+    if (attend === 'yes' && !bride && !groom) {
+      setRsvpError('Vui lòng chọn ít nhất một bữa tiệc bạn sẽ tham dự.');
+      return;
+    }
+    if (showBride && !shuttle) {
+      setRsvpError('Vui lòng cho chúng mình biết bạn có cần xe đưa đón không.');
+      return;
+    }
+    setRsvpError('');
+
     setLoading(true);
-    const formData = new FormData(e.currentTarget);
-    const willAttend = formData.get('willAttend');
-    const numberOfGuests = formData.get('numberOfGuests');
-    
+    const attending = attend === 'yes';
+    const needShuttle = showBride && shuttle === 'need';
+    const guests = Math.max(1, Number(guestTotal) || 1);
+    const message = String(new FormData(e.currentTarget).get('message') || '').trim();
+
     try {
       const res = await fetch(`/api/guests/${guestId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          status: willAttend === 'yes' ? 'THAM_GIA' : 'KHONG_THAM_GIA',
-          guestCount: Number(numberOfGuests) || 1
+          status: attending ? 'THAM_GIA' : 'KHONG_THAM_GIA',
+          guestCount: attending ? guests : 1,
+          attendBride: attending && bride,
+          attendGroom: attending && groom,
+          needShuttle,
+          shuttleCount: needShuttle ? Math.min(guests, Math.max(1, Number(shuttleTotal) || 1)) : 0,
+          message,
         })
       });
       if (res.ok) setSuccess(true);
-    } catch (err) {}
+      else setRsvpError('Có lỗi xảy ra, vui lòng thử lại.');
+    } catch (err) {
+      setRsvpError('Có lỗi xảy ra, vui lòng thử lại.');
+    }
     setLoading(false);
   };
 
   return (
     <>
-<div data-node-id="element_image_tnpiwou4hwe" style={{"position":"absolute","left":"-1.291883680555543px","top":"8906.072048611111px","width":"574.7977430555555px","height":"560.4379340277778px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
+<div data-node-id="element_image_tnpiwou4hwe" style={{"position":"absolute","left":"-1.291883680555543px","top":"8906.072048611111px","width":"574.7977430555555px","height":`${560.4379340277778 + extra}px`,"zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
             <img src="./assets/jadhaksjdnw1jl1231.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
-<section data-node-id="element_rsvp_dni58kn4w7l" data-miu-rsvp="1" data-miu-rsvp-id="element_rsvp_dni58kn4w7l" data-slug="quang-anh-ninh-giang-2026-12-31" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-1.9568142361111072px","top":"8564.474392361111px","width":"575.3487413194445px","height":"auto","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"visible","minHeight":"660.5944010416666px","--miu-rsvp-accent":"#928362","background":"transparent","borderRadius":"14px","padding":"40px 18px","fontFamily":"Lora","color":"#111827"}}>
+<section ref={rsvpRef} data-node-id="element_rsvp_dni58kn4w7l" data-miu-rsvp="1" data-miu-rsvp-id="element_rsvp_dni58kn4w7l" data-slug="quang-anh-ninh-giang-2026-12-31" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-1.9568142361111072px","top":"8564.474392361111px","width":"575.3487413194445px","height":"auto","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"visible","--miu-rsvp-accent":"#928362","background":"transparent","borderRadius":"14px","padding":"40px 18px","fontFamily":"Lora","color":"#111827"}}>
           <div className="miu-rsvp-inner" style={{"width":"100%","height":"auto","display":"flex","flexDirection":"column","gap":"14px"}}>
             <div style={{"textAlign":"center"}}>
-              <div className="miu-rsvp-title" style={{"fontWeight":"500","fontSize":"40px","lineHeight":"1.1","color":"#928362","fontFamily":"Lora"}}>
-                Xác Nhận Tham Dự
+              <div className="miu-rsvp-title" style={{"fontWeight":"500","fontSize":"36px","lineHeight":"1.1","color":"#928362","fontFamily":"Lora"}}>
+                XÁC NHẬN THAM DỰ
               </div>
               <div className="miu-rsvp-subtitle" style={{"marginTop":"8px","fontSize":"20px","opacity":"0.85","lineHeight":"1.35","color":"#928362","whiteSpace":"pre-line","fontFamily":"Lora"}}>
-                Việc xác nhận giúp chúng mình chuẩn bị chu đáo hơn. Cảm ơn bạn!
+                Hãy xác nhận sự có mặt của bạn để chúng mình chuẩn bị đón tiếp một cách chu đáo nhất. Trân trọng!
               </div>
             </div>
 
             <div className="miu-rsvp-form-wrap" style={{"background":"rgba(17, 24, 39, 0.06)","borderRadius":"12px","padding":"14px"}}>
               {success ? (
-                <div style={{ textAlign: 'center', fontSize: '20px', color: '#928362', padding: '20px 0' }}>
-                  Cảm ơn <strong>{guestName || 'bạn'}</strong> đã xác nhận!<br/>Chúng mình rất mong được gặp bạn.
+                <div style={{ textAlign: 'center', fontSize: '20px', color: '#928362', padding: '20px 0', lineHeight: 1.5 }}>
+                  Cảm ơn bạn đã dành thời gian xác nhận.<br />Hẹn gặp bạn trong ngày vui của <strong>Quang Anh &amp; Ninh Giang</strong> ♡
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
-                  <div style={{ fontSize: '22px', color: '#928362', textAlign: 'center', marginBottom: '10px' }}>
+                <form onSubmit={handleSubmit} style={{"display":"flex","flexDirection":"column","gap":"22px", "color":"#928362"}}>
+                  <div style={{ fontSize: '22px', textAlign: 'center' }}>
                     Xin chào <strong>{guestName || 'Quý khách'}</strong>
                   </div>
-                  
-                  <label className="miu-rsvp-label">
-                    <div className="miu-rsvp-label-text">Số người tham dự</div>
-                    <input type="number" name="numberOfGuests" min="1" step="1" defaultValue="1" placeholder="Ví dụ: 2" className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
-                  </label>
-                  
-                  <div className="miu-rsvp-radio" data-kind="attendance">
-                    <label><input type="radio" name="willAttend" value="yes" defaultChecked />
-                      Có, tôi sẽ tham dự</label>
-                    <label><input type="radio" name="willAttend" value="no" /> Xin
-                      lỗi, tôi bận mất rồi!</label>
+
+                  <div>
+                    <div style={QUESTION}>BẠN SẼ THAM DỰ CHỨ?</div>
+                    <div className="miu-rsvp-radio" data-kind="attendance">
+                      <label><input type="radio" name="willAttend" value="yes" required checked={attend === 'yes'} onChange={() => setAttend('yes')} />
+                        Có, tôi sẽ tham dự</label>
+                      <label><input type="radio" name="willAttend" value="no" checked={attend === 'no'} onChange={() => setAttend('no')} />
+                        Rất tiếc, tôi không thể tham dự</label>
+                    </div>
                   </div>
-                  
-                  <textarea name="message" placeholder="Lời nhắn cho Cô Dâu &amp; Chú Rể" className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
-  
-                  <div style={{"display":"flex","alignItems":"center","justifyContent":"center","marginTop":"22px"}}>
+
+                  {attend === 'yes' && (
+                    <>
+                      <div>
+                        <div style={QUESTION}>BẠN SẼ THAM DỰ TIỆC NÀO?</div>
+                        <div className="miu-rsvp-radio">
+                          <label><input type="checkbox" checked={bride} onChange={(e) => setBride(e.target.checked)} />
+                            Tiệc nhà gái · Hải Phòng — 18.10.2026</label>
+                          <label><input type="checkbox" checked={groom} onChange={(e) => setGroom(e.target.checked)} />
+                            Tiệc nhà trai · Hà Nội — 25.10.2026</label>
+                        </div>
+                        <div style={{ ...HINT, marginTop: '8px' }}>Có thể chọn cả hai.</div>
+                      </div>
+
+                      <label className="miu-rsvp-label">
+                        <div style={QUESTION}>SỐ NGƯỜI THAM DỰ</div>
+                        <div style={HINT}>Vui lòng cho chúng mình biết số người sẽ cùng bạn đến dự tiệc.</div>
+                        <input type="number" min="1" max="20" step="1" value={guestTotal} onChange={(e) => setGuestTotal(e.target.value)} className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
+                      </label>
+
+                      {showBride && (
+                        <div>
+                          <div style={QUESTION}>BẠN CÓ CẦN XE ĐƯA ĐÓN ĐẾN TIỆC NHÀ GÁI KHÔNG?</div>
+                          <div className="miu-rsvp-radio">
+                            <label><input type="radio" name="shuttle" value="self" checked={shuttle === 'self'} onChange={() => setShuttle('self')} />
+                              Tôi sẽ chủ động phương tiện di chuyển</label>
+                            <label><input type="radio" name="shuttle" value="need" checked={shuttle === 'need'} onChange={() => setShuttle('need')} />
+                              Tôi cần xe đưa đón</label>
+                          </div>
+                        </div>
+                      )}
+
+                      {showBride && shuttle === 'need' && (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '19px', lineHeight: 1.45 }}>
+                          <div style={QUESTION}>THÔNG TIN XE ĐƯA ĐÓN</div>
+                          <div>Gia đình cô dâu có chuẩn bị xe đưa đón dành cho khách mời từ Hà Nội về dự tiệc tại Hải Phòng.</div>
+                          <div>
+                            <div><strong>Thời gian tập trung:</strong> 08:30</div>
+                            <div><strong>Địa điểm:</strong> [Bổ sung địa điểm tập trung]</div>
+                            <div><strong>Liên hệ:</strong> Mr. Thắng · [Số điện thoại]</div>
+                          </div>
+                          <div>Vui lòng đăng ký số người đi xe để gia đình chuẩn bị chỗ ngồi chu đáo nhé.</div>
+                          <label className="miu-rsvp-label">
+                            <div style={{ fontWeight: 700 }}>Số người đi xe:</div>
+                            <input type="number" min="1" max={Math.max(1, Number(guestTotal) || 1)} step="1" value={shuttleTotal} onChange={(e) => setShuttleTotal(e.target.value)} className="miu-rsvp-input" style={{"fontSize":"20px","color":"#928362"}} />
+                          </label>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  <label className="miu-rsvp-label">
+                    <div style={QUESTION}>LỜI NHẮN DÀNH CHO CÔ DÂU &amp; CHÚ RỂ</div>
+                    <div style={HINT}>Nếu bạn muốn gửi đôi lời đến chúng mình.</div>
+                    <textarea name="message" maxLength={1000} placeholder="Nhập lời nhắn..." className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
+                  </label>
+
+                  {rsvpError && <div style={{ color: '#b91c1c', fontSize: '18px', textAlign: 'center' }}>{rsvpError}</div>}
+
+                  <div style={{"display":"flex","alignItems":"center","justifyContent":"center","marginTop":"4px"}}>
                     <button type="submit" disabled={loading || !guestId} style={{"appearance":"none","border":"0","background":"#928362","color":"#ffffff","borderRadius":"999px","padding":"12px 18px","fontWeight":"600","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","minWidth":"180px", opacity: (loading || !guestId) ? 0.5 : 1}}>
-                      {loading ? 'Đang gửi...' : (guestId ? 'Xác nhận' : 'Vui lòng truy cập bằng link cá nhân')}
+                      {loading ? 'Đang gửi...' : (guestId ? 'XÁC NHẬN' : 'Vui lòng truy cập bằng link cá nhân')}
                     </button>
                   </div>
                 </form>
@@ -143,6 +252,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
             </div>
           </div>
         </section>
+<div style={{ transform: `translateY(${extra}px)` }}>
 <div data-node-id="element_image_rfzilsl6fuj" style={{"position":"absolute","left":"-4.745876736111114px","top":"9436.993055555557px","width":"581.2215711805555px","height":"968.9624565972222px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
             <img src="./assets/jadhaksjdnw1jl1231.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
@@ -198,7 +308,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
         </section>
 <div data-node-id="element_image_orawxgf8amu" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-27.75086805555555px","top":"10401.419704861111px","width":"601.8897569444445px","height":"439.2137586805556px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="https://res.cloudinary.com/qfehnx6t/image/upload/q_auto,f_auto/v1789790117/TIT04199.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="./assets/thank-you.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
             <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"linear-gradient(\n                  to top,\n                  rgba(0, 0, 0, 0.4) 0%,\n                  rgba(0, 0, 0, 0) 60%\n                )","opacity":"1","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
           </div>
         </div>
@@ -217,6 +327,7 @@ export default function Section10({ guestName, guestId }: { guestName?: string, 
               <path d="M12 22V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
               <path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C10 2 12 7 12 7z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path>
               <path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C14 2 12 7 12 7z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"></path></svg></span>Quà mừng cưới</button>
+</div>
 <div data-node-id="element_text_8pauzxaqtny" data-node-type="element_text" data-manual-sized="1" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" data-anim-distance="200" style={{"position":"absolute","left":"270.761px","top":"628.758px","width":"65.4789px","height":"78px","zIndex":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","opacity":"1","display":"block","textAlign":"center","fontFamily":"\"UVN Hoa Tay\", \"Brush Script MT\", cursive","fontSize":"60px","fontWeight":"400","fontStyle":"normal","color":"rgb(255, 255, 255)","whiteSpace":"pre-wrap","paddingTop":"5px","paddingBottom":"5px","animation":"3000ms cubic-bezier(0.2, 0.8, 0.2, 1) 0ms 1 normal both\n              running miu-fadeIn","--miu-anim-distance":"200px"}}>
           &amp;
         </div>

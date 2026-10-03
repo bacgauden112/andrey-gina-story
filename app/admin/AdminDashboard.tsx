@@ -8,6 +8,11 @@ type Guest = {
   name: string;
   status: string;
   guestCount: number;
+  attendBride?: boolean;
+  attendGroom?: boolean;
+  needShuttle?: boolean;
+  shuttleCount?: number;
+  message?: string | null;
 };
 
 type Wish = {
@@ -148,14 +153,17 @@ export default function AdminDashboard() {
                   <th className="py-3 px-4">Tên khách</th>
                   <th className="py-3 px-4">Trạng thái RSVP</th>
                   <th className="py-3 px-4">Số người</th>
+                  <th className="py-3 px-4">Tiệc</th>
+                  <th className="py-3 px-4">Xe đưa đón</th>
+                  <th className="py-3 px-4">Lời nhắn</th>
                   <th className="py-3 px-4 text-right">Hành động</th>
                 </tr>
               </thead>
               <tbody>
                 {loadingGuests ? (
-                  <tr><td colSpan={4} className="text-center py-8">Đang tải...</td></tr>
+                  <tr><td colSpan={7} className="text-center py-8">Đang tải...</td></tr>
                 ) : guests.length === 0 ? (
-                  <tr><td colSpan={4} className="text-center py-8 text-gray-500">Chưa có khách mời nào</td></tr>
+                  <tr><td colSpan={7} className="text-center py-8 text-gray-500">Chưa có khách mời nào</td></tr>
                 ) : (
                   guests.map((g) => (
                     <tr key={g.id} className="border-b hover:bg-gray-50">
@@ -166,6 +174,11 @@ export default function AdminDashboard() {
                         {g.status === "CHUA_XAC_NHAN" && <span className="text-gray-400">Chưa xác nhận</span>}
                       </td>
                       <td className="py-3 px-4">{g.guestCount}</td>
+                      <td className="py-3 px-4 text-sm">
+                        {g.status === "THAM_GIA" ? ([g.attendBride && "Nhà gái", g.attendGroom && "Nhà trai"].filter(Boolean).join(" + ") || "-") : "-"}
+                      </td>
+                      <td className="py-3 px-4 text-sm">{g.needShuttle ? `Cần xe (${g.shuttleCount} người)` : "-"}</td>
+                      <td className="py-3 px-4 text-sm max-w-xs whitespace-pre-wrap">{g.message || "-"}</td>
                       <td className="py-3 px-4 flex justify-end gap-2">
                         <button onClick={() => copyLink(g.id)} className="text-blue-500 hover:underline text-sm">Copy Link</button>
                         <button onClick={() => handleDeleteGuest(g.id)} className="text-red-500 hover:underline text-sm ml-4">Xóa</button>

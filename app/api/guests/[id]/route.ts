@@ -12,6 +12,11 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
     if (body.name !== undefined) updateData.name = body.name;
     if (body.status !== undefined) updateData.status = body.status;
     if (body.guestCount !== undefined) updateData.guestCount = body.guestCount;
+    if (body.attendBride !== undefined) updateData.attendBride = Boolean(body.attendBride);
+    if (body.attendGroom !== undefined) updateData.attendGroom = Boolean(body.attendGroom);
+    if (body.needShuttle !== undefined) updateData.needShuttle = Boolean(body.needShuttle);
+    if (body.shuttleCount !== undefined) updateData.shuttleCount = Number(body.shuttleCount) || 0;
+    if (body.message !== undefined) updateData.message = body.message ? String(body.message).slice(0, 1000) : null;
 
     const guest = await prisma.guest.update({
       where: { id },
