@@ -10,7 +10,7 @@ export default function Section1({ guestType = 'BOTH' }: { guestType?: string })
     <>
 <div data-node-id="element_image_uuhu8y3wiv4" style={{"position":"absolute","left":"-4.097005208333329px","top":"-1.366102430555543px","width":"580.7565104166666px","height":"873.7580295138888px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
-            <img src="./assets/cover-save-the-date.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
+            <img src="./assets/cover-couple.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
             <div aria-hidden="true" style={{"position":"absolute","inset":"0","background":"linear-gradient(\n                  to top,\n                  rgba(0, 0, 0, 0.4) 0%,\n                  rgba(0, 0, 0, 0) 60%\n                )","opacity":"1","mixBlendMode":"normal","pointerEvents":"none","borderRadius":"0px"}}></div>
           </div>
         </div>
