@@ -1,11 +1,9 @@
 // @ts-nocheck
 import React, { useState, useEffect, useRef } from 'react';
+import { WISHES_SHRINK } from './canvasOffsets';
 
 // Height of the RSVP block in its initial (nothing answered yet) state; everything below is laid out for it.
 const RSVP_BASE_H = 754;
-
-// The guestbook no longer has a form, so its box is shorter; what follows moves up by the same amount.
-export const WISHES_SHRINK = 200;
 
 const formatWishTime = (iso: string) => {
   const d = new Date(iso);
@@ -68,8 +66,8 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
       if (res.ok) {
         const data = await res.json();
         setWishes(data);
-        const mine = guestId ? data.find((w) => w.guestId === guestId) : null;
-        if (mine) setWishName(mine.name); // the display name they used last time
+        const mine = guestId ? data.find((w) => w.guestId === guestId && w.fromRsvp) : null;
+        if (mine) setWishName((prev) => prev || mine.name); // the display name they used last time
       }
     } catch (error) {
       console.error('Error fetching wishes:', error);
@@ -94,7 +92,39 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
   const [guestTotal, setGuestTotal] = useState(init.guestTotal);
   const [shuttleTotal, setShuttleTotal] = useState(init.shuttleTotal);
   const [message, setMessage] = useState(init.message);
-  const [wishName, setWishName] = useState(guestName || '');
+  const [wishName, setWishName] = useState('');
+  // Guestbook form: every person opening the same link can post as many wishes as they like.
+  const [gbName, setGbName] = useState('');
+  const [gbText, setGbText] = useState('');
+  const [gbSending, setGbSending] = useState(false);
+  const [gbNotice, setGbNotice] = useState('');
+
+  const handleWishSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const content = gbText.trim();
+    const name = gbName.trim();
+    if (!content || !name || gbSending) return;
+    setGbSending(true);
+    setGbNotice('');
+    try {
+      const res = await fetch('/api/wishes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ guest: guestId, name, content }),
+      });
+      if (res.ok) {
+        setGbText('');
+        setGbNotice('Cảm ơn bạn đã gửi lời chúc ♡');
+        fetchWishes();
+      } else {
+        setGbNotice('Chưa gửi được lời chúc, vui lòng thử lại.');
+      }
+    } catch (err) {
+      setGbNotice('Chưa gửi được lời chúc, vui lòng thử lại.');
+    }
+    setGbSending(false);
+  };
+
   const [rsvpError, setRsvpError] = useState('');
   const [extra, setExtra] = useState(0);
   const rsvpRef = useRef<HTMLElement>(null);
@@ -145,6 +175,10 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
       setRsvpError('Vui lòng cho chúng mình biết bạn có cần xe đưa đón không.');
       return;
     }
+    if (!wishName.trim() || !message.trim()) {
+      setRsvpError('Vui lòng nhập tên hiển thị và lời nhắn của bạn.');
+      return;
+    }
     setRsvpError('');
 
     setLoading(true);
@@ -165,7 +199,7 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
           needShuttle,
           shuttleCount: needShuttle ? Math.min(guests, Math.max(1, Number(shuttleTotal) || 1)) : 0,
           message: text,
-          wishName: wishName.trim() || guestName || 'Ẩn danh',
+          wishName: wishName.trim(),
         })
       });
       if (res.ok) {
@@ -305,18 +339,19 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
 
                   <label className="miu-rsvp-label">
                     <div style={QUESTION}>LỜI NHẮN DÀNH CHO CÔ DÂU &amp; CHÚ RỂ</div>
-                    <div style={HINT}>Nếu bạn muốn gửi đôi lời đến chúng mình. Lời nhắn sẽ được đăng trong Sổ lưu bút.</div>
+                    <div style={HINT}>Lời nhắn của bạn sẽ được đăng trong Sổ lưu bút.</div>
                     <input
                       type="text"
                       value={wishName}
                       onChange={(e) => setWishName(e.target.value)}
                       maxLength={60}
-                      placeholder={guestName ? `Để trống sẽ hiện tên: ${guestName}` : 'Để trống sẽ hiện: Ẩn danh'}
+                      required
+                      placeholder="Để lại tên để vợ chồng mình biết lời nhắn này là của ai nhé 🤍"
                       aria-label="Tên hiển thị trên sổ lưu bút"
                       className="miu-rsvp-input"
                       style={{"fontSize":"20px","color":"#928362","marginBottom":"10px"}}
                     />
-                    <textarea name="message" value={message} onChange={(e) => setMessage(e.target.value)} maxLength={1000} placeholder="Nhập lời nhắn..." className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
+                    <textarea name="message" value={message} onChange={(e) => setMessage(e.target.value)} maxLength={1000} required placeholder="Nhập lời nhắn..." className="miu-rsvp-textarea" style={{"fontSize":"20px","color":"#928362"}}></textarea>
                   </label>
 
                   {rsvpError && <div style={{ color: '#b91c1c', fontSize: '18px', textAlign: 'center' }}>{rsvpError}</div>}
@@ -339,12 +374,12 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
           </div>
         </section>
 <div style={{ transform: `translateY(${extra}px)` }}>
-<div data-node-id="element_image_rfzilsl6fuj" style={{"position":"absolute","left":"-4.745876736111114px","top":"9436.993055555557px","width":"581.2215711805555px","height":"768.96px","zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
+<div data-node-id="element_image_rfzilsl6fuj" style={{"position":"absolute","left":"-4.745876736111114px","top":"9436.993055555557px","width":"581.2215711805555px","height":`${968.96 - WISHES_SHRINK}px`,"zIndex":"0","opacity":"1","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
             <img src="./assets/jadhaksjdnw1jl1231.png" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 50%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />
           </div>
         </div>
-<section data-node-id="element_wishes_hafv0w9720j" data-miu-wishes="1" data-miu-wishes-id="element_wishes_hafv0w9720j" data-slug="quang-anh-ninh-giang-2026-12-31" data-initial-limit="3" data-submit-text="Gửi lời chúc" data-loadmore-text="Xem thêm lời chúc ↓" data-empty-text="Chưa có lời chúc nào" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-2.9893663194444327px","top":"9597.25542534722px","width":"579.666232638889px","height":"578.6px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"visible","background":"transparent","borderRadius":"14px","padding":"18px","fontFamily":"Lora","color":"#1f2937","--miu-wishes-list-name-size":"20px","--miu-wishes-list-comment-size":"20px","--miu-wishes-list-name-color":"#928362","--miu-wishes-list-comment-color":"#928362"}}>
+<section data-node-id="element_wishes_hafv0w9720j" data-miu-wishes="1" data-miu-wishes-id="element_wishes_hafv0w9720j" data-slug="quang-anh-ninh-giang-2026-12-31" data-initial-limit="3" data-submit-text="Gửi lời chúc" data-loadmore-text="Xem thêm lời chúc ↓" data-empty-text="Chưa có lời chúc nào" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-2.9893663194444327px","top":"9597.25542534722px","width":"579.666232638889px","height":`${778.6 - WISHES_SHRINK}px`,"zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"visible","background":"transparent","borderRadius":"14px","padding":"18px","fontFamily":"Lora","color":"#1f2937","--miu-wishes-list-name-size":"20px","--miu-wishes-list-comment-size":"20px","--miu-wishes-list-name-color":"#928362","--miu-wishes-list-comment-color":"#928362"}}>
           <div className="miu-wishes-inner" style={{"width":"100%","height":"100%","minHeight":"0","display":"flex","flexDirection":"column","gap":"14px"}}>
             <div style={{"textAlign":"center"}}>
               <div className="miu-wishes-title" style={{"fontWeight":"400","fontSize":"80px","lineHeight":"1.1","color":"#928362","fontFamily":"'High Spirited', 'Brush Script MT', cursive"}}>
@@ -354,6 +389,38 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
                 Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất
                 đến đám cưới của chúng tôi!
               </div>
+            </div>
+
+            <div className="miu-wishes-form-wrap" style={{"background":"#928362","borderRadius":"12px","padding":"14px"}}>
+              <form onSubmit={handleWishSubmit} style={{"display":"flex","flexDirection":"column","gap":"10px"}}>
+                {gbNotice && <div style={{ color: '#ffffff', textAlign: 'center' }}>{gbNotice}</div>}
+                {/* 2 rows so the long hint is not cut off on phones; Enter does not add a line (it is a single-line name). */}
+                <textarea
+                  rows={2}
+                  value={gbName}
+                  onChange={(e) => setGbName(e.target.value.replace(/[\r\n]+/g, ' '))}
+                  onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
+                  maxLength={60}
+                  required
+                  aria-label="Tên hiển thị"
+                  placeholder="Để lại tên để vợ chồng mình biết lời nhắn này là của ai nhé 🤍"
+                  style={{"width":"100%","border":"1px solid rgba(0, 0, 0, 0.12)","borderRadius":"10px","padding":"10px 12px","fontSize":"20px","lineHeight":"1.3","color":"#928362","background":"#ffffff","resize":"none"}}
+                ></textarea>
+                <textarea
+                  value={gbText}
+                  onChange={(e) => setGbText(e.target.value)}
+                  maxLength={1000}
+                  required
+                  aria-label="Lời chúc"
+                  placeholder="Nhập lời chúc của bạn*"
+                  style={{"width":"100%","border":"1px solid rgba(0, 0, 0, 0.12)","borderRadius":"10px","padding":"10px 12px","fontSize":"20px","minHeight":"30px","resize":"vertical","color":"#928362","background":"#ffffff"}}
+                ></textarea>
+                <div style={{"display":"flex","alignItems":"center","justifyContent":"center"}}>
+                  <button type="submit" disabled={gbSending || !guestId} style={{"appearance":"none","border":"0","background":"#ffffff","color":"#928362","borderRadius":"10px","padding":"10px 16px","fontWeight":"900","cursor":"pointer","whiteSpace":"nowrap","fontSize":"20px","fontFamily":"Lora", "opacity": (gbSending || !guestId) ? 0.5 : 1}}>
+                    {gbSending ? 'Đang gửi...' : (guestId ? 'Gửi lời chúc' : 'Mở bằng link mời để gửi lời chúc')}
+                  </button>
+                </div>
+              </form>
             </div>
 
             <div data-miu-wishes-list="1" data-miu-wishes-id="element_wishes_hafv0w9720j" style={{"background":"rgba(255, 255, 255, 0.6)","borderRadius":"12px","flex":"1 1 auto","minHeight":"0px","overflow":"auto"}}>
@@ -378,7 +445,7 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
             </button>
           </div>
         </section>
-<div style={{ transform: `translateY(-${WISHES_SHRINK}px)` }}>
+<div style={{ transform: `translateY(${-WISHES_SHRINK}px)` }}>
 <div data-node-id="element_image_orawxgf8amu" data-anim-preset="fadeIn" data-anim-duration="3000" data-anim-delay="0" data-anim-easing="cubic-bezier(0.2, 0.8, 0.2, 1)" data-anim-loop="0" style={{"position":"absolute","left":"-27.75086805555555px","top":"10401.419704861111px","width":"601.8897569444445px","height":"439.2137586805556px","zIndex":"0","opacity":"0","--miu-node-rotate":"0deg","transform":"rotate(var(--miu-node-rotate, 0deg))","overflow":"hidden","borderRadius":"0px"}}>
           <div style={{"position":"relative","width":"100%","height":"100%"}}>
             <img src="./assets/thank-you.jpg" alt="" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"50% 28%","display":"block","transform":"scale(1, 1)","transformOrigin":"center","borderRadius":"0px"}} />

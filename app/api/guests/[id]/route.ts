@@ -75,18 +75,20 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
       where: { id },
       data: updateData,
     });
-    // The RSVP message is the guestbook entry: one per guest, updated (not duplicated) when they answer again.
+    // The RSVP message is one guestbook entry per link, updated (not duplicated) when they answer again.
+    // Other wishes sent from the same link (see POST /api/wishes) are left alone.
     if (message !== undefined) {
+      const existing = await prisma.wish.findFirst({ where: { guestId: id, fromRsvp: true } });
       if (message) {
         const wishName =
           (typeof body.wishName === "string" ? body.wishName.replace(/\s+/g, " ").trim().slice(0, 60) : "") || guest.name || "Ẩn danh";
-        await prisma.wish.upsert({
-          where: { guestId: id },
-          create: { guestId: id, name: wishName, content: message },
-          update: { name: wishName, content: message, createdAt: new Date() },
-        });
-      } else {
-        await prisma.wish.deleteMany({ where: { guestId: id } });
+        if (existing) {
+          await prisma.wish.update({ where: { id: existing.id }, data: { name: wishName, content: message, createdAt: new Date() } });
+        } else {
+          await prisma.wish.create({ data: { guestId: id, fromRsvp: true, name: wishName, content: message } });
+        }
+      } else if (existing) {
+        await prisma.wish.delete({ where: { id: existing.id } });
       }
     }
 

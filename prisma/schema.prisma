@@ -26,8 +26,11 @@ model Guest {
 
 model Wish {
   id        String   @id @default(cuid())
-  guestId   String?  @unique // lời nhắn gửi kèm RSVP: mỗi khách tối đa 1 lời nhắn
+  guestId   String? // khách (link) đã gửi lời chúc này; một link có thể gửi nhiều lời
+  fromRsvp  Boolean  @default(false) // lời nhắn nhập ở form RSVP (mỗi khách tối đa 1, được cập nhật khi trả lời lại)
   name      String
   content   String
   createdAt DateTime @default(now())
+
+  @@index([guestId])
 }

@@ -65,17 +65,13 @@ export async function syncGuestWishes() {
       where: { message: { not: null } },
       select: { id: true, name: true, message: true, updatedAt: true },
     }),
-    prisma.wish.findMany({ where: { guestId: { not: null } }, select: { guestId: true } }),
+    prisma.wish.findMany({ where: { guestId: { not: null }, fromRsvp: true }, select: { guestId: true } }),
   ]);
   const linked = new Set(wishes.map((w) => w.guestId));
   for (const g of guests) {
     const content = (g.message || "").trim();
     if (!content || linked.has(g.id)) continue;
-    try {
-      await prisma.wish.create({ data: { guestId: g.id, name: g.name, content, createdAt: g.updatedAt } });
-    } catch (e) {
-      if ((e as { code?: string })?.code !== "P2002") throw e; // created at the same moment elsewhere
-    }
+    await prisma.wish.create({ data: { guestId: g.id, fromRsvp: true, name: g.name, content, createdAt: g.updatedAt } });
   }
 }
 
