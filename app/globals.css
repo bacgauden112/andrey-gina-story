@@ -369,6 +369,8 @@ body {
       opacity: .85;
       line-height: 1.35;
       color: var(--miu-wishes-list-comment-color, inherit);
+      white-space: pre-wrap; /* keep the line breaks the guest typed */
+      overflow-wrap: anywhere;
     }
 
     [data-miu-wishes="1"] .miu-wishes-empty {
@@ -2501,6 +2503,8 @@ body {
       opacity: .85;
       line-height: 1.35;
       color: var(--miu-wishes-list-comment-color, inherit);
+      white-space: pre-wrap; /* keep the line breaks the guest typed */
+      overflow-wrap: anywhere;
     }
 
     [data-miu-wishes="1"] .miu-wishes-empty {
