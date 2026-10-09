@@ -265,10 +265,12 @@ export default function AdminDashboard() {
   };
 
   const handleDeleteWish = async (w: Wish) => {
-    if (!confirm(`Xóa lời chúc của "${w.name}"?`)) return;
-    await fetch(`/api/wishes/${w.id}`, { method: "DELETE" });
-    showToast("Đã xóa lời chúc");
+    if (!confirm(`Xóa lời chúc của "${w.name}"? Không thể hoàn tác.`)) return;
+    const res = await fetch(`/api/wishes/${w.id}`, { method: "DELETE" });
+    showToast(res.ok ? "Đã xóa lời chúc" : "Không xóa được lời chúc, vui lòng thử lại");
+    // An RSVP message is also stored on the guest, so refresh both lists.
     fetchWishes();
+    fetchGuests();
   };
 
   const handleLogout = async () => {
