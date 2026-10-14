@@ -323,9 +323,20 @@ export default function Section10({ guestName, guestId, guestType = 'BOTH', rsvp
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '19px', lineHeight: 1.45 }}>
                           <div style={QUESTION}>THÔNG TIN XE ĐƯA ĐÓN</div>
                           <div>Gia đình cô dâu có chuẩn bị xe đưa đón dành cho khách mời từ Hà Nội về dự tiệc tại Hải Phòng.</div>
-                          <div>
-                            <div><strong>Thời gian tập trung:</strong> 8h30</div>
-                            <div><strong>Địa điểm và thông tin liên hệ:</strong> Sẽ được cập nhật sau</div>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            <div>
+                              <strong>Điểm đón:</strong> Adidas Xã Đàn - 460 Xã Đàn, Hà Nội
+                              <div>
+                                <a href="https://maps.app.goo.gl/Js8dbVHRQAhTiZxCA" target="_blank" rel="noopener noreferrer" style={{ color: '#928362', fontWeight: 700 }}>
+                                  📍 Xem bản đồ
+                                </a>
+                              </div>
+                            </div>
+                            <div>⏰ <strong>Thời gian tập trung:</strong> 8h00 | Chủ nhật, 18.10.2026</div>
+                            <div>
+                              📞 <strong>Trưởng đoàn:</strong> Anh Thắng -{' '}
+                              <a href="tel:0364403691" style={{ color: '#928362', fontWeight: 700 }}>036 440 3691</a>
+                            </div>
                           </div>
                           <div>Vui lòng đăng ký số người đi xe để gia đình chuẩn bị chỗ ngồi chu đáo nhé.</div>
                           <label className="miu-rsvp-label">
